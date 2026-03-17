@@ -46,7 +46,7 @@ export function PdfToWord() {
         const page = await pdf.getPage(i);
         const content = await page.getTextContent();
         const strings = content.items
-          .map((item: { str?: string }) => item.str)
+          .map((item) => ("str" in item ? item.str : undefined))
           .filter(Boolean) as string[];
         const text = strings.join(" ").trim();
         if (text) {

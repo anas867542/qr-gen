@@ -26,7 +26,7 @@ export default function ContactPage() {
           <strong>Email:</strong>{" "}
           <a
             href={`mailto:${CONTACT_EMAIL}`}
-            style={{ color: "var(--accent)", textDecoration: "none" }
+            style={{ color: "var(--accent)", textDecoration: "none" }}
           >
             {CONTACT_EMAIL}
           </a>
