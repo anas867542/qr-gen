@@ -1,0 +1,7 @@
+{
+  "/page": "app/page.js",
+  "/tools/word-counter/page": "app/tools/word-counter/page.js",
+  "/tools/qr-code-generator/page": "app/tools/qr-code-generator/page.js",
+  "/tools/pdf-to-word/page": "app/tools/pdf-to-word/page.js",
+  "/privacy/page": "app/privacy/page.js"
+}
