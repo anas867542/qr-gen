@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { getRelatedTools, TOOL_CATEGORIES, type ToolMeta } from "@/lib/tools/config";
 import { getToolGuide } from "@/lib/toolGuides";
+import { getArticleBySlug } from "@/lib/blogArticles";
+import { TOOL_TO_BLOG_SLUGS } from "@/lib/toolBlogLinks";
 
 interface ToolLayoutProps {
   tool: ToolMeta;
@@ -36,10 +38,10 @@ export function ToolLayout({ tool, children }: ToolLayoutProps) {
         </header>
         <div className="tool-content">{children}</div>
 
-        {/* SEO content: what it does, how to use, benefits, use cases (300–500+ words per tool) */}
+        {/* SEO content: what it does, how to use, benefits, use cases (300–800 words per tool) */}
         {guide && (
           <section className="tool-guide" aria-label="Guide">
-            <h2 className="tool-guide-title">About this tool</h2>
+            <h2 className="tool-guide-title">What this tool does &amp; how to use it</h2>
             {guide.sections.map((section, i) => (
               <div key={i} className="tool-guide-section">
                 <h3 className="tool-guide-heading">{section.heading}</h3>
@@ -50,6 +52,23 @@ export function ToolLayout({ tool, children }: ToolLayoutProps) {
                 ))}
               </div>
             ))}
+            {(TOOL_TO_BLOG_SLUGS[tool.slug]?.length ?? 0) > 0 && (
+              <div className="tool-guide-related-blog">
+                <h3 className="tool-guide-heading">Related guides</h3>
+                <ul className="tool-guide-blog-list">
+                  {TOOL_TO_BLOG_SLUGS[tool.slug]
+                    .map((slug) => getArticleBySlug(slug))
+                    .filter((a): a is NonNullable<typeof a> => a != null)
+                    .map((article) => (
+                      <li key={article.slug}>
+                        <Link href={`/blog/${article.slug}`} className="related-tools-link">
+                          {article.title}
+                        </Link>
+                      </li>
+                    ))}
+                </ul>
+              </div>
+            )}
             <p className="tool-guide-more">
               <Link href="/blog" className="tool-breadcrumb-link">
                 More guides and articles →

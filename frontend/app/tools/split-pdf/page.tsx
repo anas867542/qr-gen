@@ -1,12 +1,8 @@
-import type { Metadata } from "next";
-import { getToolBySlug } from "@/lib/tools/config";
+import { getToolBySlug, getToolMetadata } from "@/lib/tools/config";
 import { ToolLayout } from "@/components/tools/ToolLayout";
 import { SplitPdf } from "@/components/tools/SplitPdf";
 
-export const metadata: Metadata = {
-  title: "Split PDF — Split PDF by pages",
-  description: "Split a PDF into multiple files by page range or one file per page. Free, in browser.",
-};
+export const metadata = getToolMetadata("split-pdf");
 
 export default function Page() {
   const tool = getToolBySlug("split-pdf");

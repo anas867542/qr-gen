@@ -1,12 +1,8 @@
-import type { Metadata } from "next";
-import { getToolBySlug } from "@/lib/tools/config";
+import { getToolBySlug, getToolMetadata } from "@/lib/tools/config";
 import { ToolLayout } from "@/components/tools/ToolLayout";
 import { WordCounter } from "@/components/tools/WordCounter";
 
-export const metadata: Metadata = {
-  title: "Word Counter — Count words & characters",
-  description: "Count words, characters, sentences, and paragraphs. No data sent to server.",
-};
+export const metadata = getToolMetadata("word-counter");
 
 export default function Page() {
   const tool = getToolBySlug("word-counter");

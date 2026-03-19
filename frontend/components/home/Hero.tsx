@@ -7,11 +7,14 @@ export function Hero() {
           Free online <span className="gradient-text">tools</span>
         </h1>
         <p className="hero-lead">
-          QR generator, password generator, JSON formatter, Base64 encoder, word
+          QR code generator, password generator, JSON formatter, Base64 encoder, word
           counter, image compressor, PDF merge and split, and more. One click, no account.
         </p>
         <p className="hero-intro">
-          We provide free, privacy-friendly tools that run entirely in your browser. No uploads to our servers for most tools—your data stays on your device. Use our guides and articles to learn how to get the most out of each tool, then browse the full list below.
+          Free online tools for developers and everyone else: create QR codes, format JSON, convert images and PDFs, generate passwords and UUIDs—all in your browser. No signup, no data sent to our servers. We also publish guides and articles so you can learn what each tool does, how to use it, and when it’s useful.
+        </p>
+        <p className="hero-seo">
+          Use our <strong>QR code generator</strong> for links and Wi‑Fi, our <strong>developer utilities</strong> for Base64 and URL encoding, and our <strong>PDF and image tools</strong> for merge, split, compress, and convert. Browse the tool list below or read the blog for step-by-step guides.
         </p>
         <div className="hero-cta">
           <a href="#tools" className="btn btn-primary">

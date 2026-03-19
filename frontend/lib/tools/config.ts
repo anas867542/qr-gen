@@ -190,3 +190,38 @@ export function getToolsByCategory(category: ToolCategory): ToolMeta[] {
 export function getRelatedTools(tool: ToolMeta, limit = 4): ToolMeta[] {
   return TOOLS.filter((t) => t.category === tool.category && t.slug !== tool.slug).slice(0, limit);
 }
+
+const SITE_NAME = "Free Online Tools";
+const BASE_URL =
+  (typeof process !== "undefined" && process.env.NEXT_PUBLIC_SITE_URL) || "https://snapptools.net";
+
+/** SEO metadata for a tool page. Use in each tool page: export const metadata = getToolMetadata("slug"); */
+export function getToolMetadata(slug: string): import("next").Metadata {
+  const tool = getToolBySlug(slug);
+  if (!tool) {
+    return { title: "Tool not found" };
+  }
+  const url = `${BASE_URL.replace(/\/$/, "")}/tools/${tool.slug}`;
+  const title = `${tool.name} — ${SITE_NAME}`;
+  const description =
+    tool.description.length > 160 ? tool.description.slice(0, 157) + "…" : tool.description;
+  const keywords = tool.keywords ?? [tool.name.toLowerCase(), "free online tool"];
+  return {
+    title,
+    description,
+    keywords: keywords.join(", "),
+    openGraph: {
+      title: tool.name,
+      description: tool.description,
+      type: "website",
+      url,
+      siteName: SITE_NAME,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: tool.name,
+      description: tool.description,
+    },
+    alternates: { canonical: url },
+  };
+}

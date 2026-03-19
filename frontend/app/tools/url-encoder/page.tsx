@@ -1,12 +1,8 @@
-import type { Metadata } from "next";
-import { getToolBySlug } from "@/lib/tools/config";
+import { getToolBySlug, getToolMetadata } from "@/lib/tools/config";
 import { ToolLayout } from "@/components/tools/ToolLayout";
 import { UrlEncoder } from "@/components/tools/UrlEncoder";
 
-export const metadata: Metadata = {
-  title: "URL Encoder / Decoder",
-  description: "Encode or decode URL-encoded (percent-encoded) strings.",
-};
+export const metadata = getToolMetadata("url-encoder");
 
 export default function Page() {
   const tool = getToolBySlug("url-encoder");

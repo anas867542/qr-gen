@@ -1,12 +1,8 @@
-import type { Metadata } from "next";
-import { getToolBySlug } from "@/lib/tools/config";
+import { getToolBySlug, getToolMetadata } from "@/lib/tools/config";
 import { ToolLayout } from "@/components/tools/ToolLayout";
 import { LoremIpsumGenerator } from "@/components/tools/LoremIpsumGenerator";
 
-export const metadata: Metadata = {
-  title: "Lorem Ipsum Generator — Placeholder text",
-  description: "Generate Lorem Ipsum placeholder text in paragraphs, sentences, or words.",
-};
+export const metadata = getToolMetadata("lorem-ipsum-generator");
 
 export default function Page() {
   const tool = getToolBySlug("lorem-ipsum-generator");
