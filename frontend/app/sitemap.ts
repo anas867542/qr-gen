@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { TOOLS } from "@/lib/tools/config";
+import { getAllSlugs } from "@/lib/blogArticles";
 
 const BASE =
   process.env.NEXT_PUBLIC_SITE_URL ||
@@ -18,10 +19,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const routes: MetadataRoute.Sitemap = [
     { url: root, lastModified: now, changeFrequency: "weekly", priority: 1 },
     { url: `${root}/tools`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
+    { url: `${root}/blog`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
     { url: `${root}/faq`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
     { url: `${root}/about`, lastModified: now, changeFrequency: "monthly", priority: 0.5 },
+    { url: `${root}/about-us`, lastModified: now, changeFrequency: "monthly", priority: 0.4 },
     { url: `${root}/contact`, lastModified: now, changeFrequency: "monthly", priority: 0.5 },
     { url: `${root}/privacy`, lastModified: now, changeFrequency: "monthly", priority: 0.3 },
+    { url: `${root}/privacy-policy`, lastModified: now, changeFrequency: "monthly", priority: 0.4 },
     { url: `${root}/terms`, lastModified: now, changeFrequency: "monthly", priority: 0.3 },
   ];
 
@@ -32,5 +36,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  return [...routes, ...toolPages];
+  const blogPages: MetadataRoute.Sitemap = getAllSlugs().map((slug) => ({
+    url: `${root}/blog/${slug}`,
+    lastModified: now,
+    changeFrequency: "monthly" as const,
+    priority: 0.6,
+  }));
+
+  return [...routes, ...toolPages, ...blogPages];
 }

@@ -19,8 +19,17 @@ export function Header() {
           <Link href="/#tools" className="nav-link">
             All tools
           </Link>
+          <Link href="/blog" className="nav-link">
+            Blog
+          </Link>
           <Link href="/faq" className="nav-link">
             FAQ
+          </Link>
+          <Link href="/about" className="nav-link">
+            About
+          </Link>
+          <Link href="/contact" className="nav-link">
+            Contact
           </Link>
           <Link href="/tools/qr-code-generator" className="nav-link">
             QR Generator

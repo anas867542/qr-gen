@@ -3,9 +3,10 @@ import Link from "next/link";
 import { FaqSection } from "@/components/home/FaqSection";
 
 export const metadata: Metadata = {
-  title: "FAQ — Frequently asked questions",
+  title: "FAQ — Frequently Asked Questions | Free Online Tools",
   description:
     "Frequently asked questions about our free online tools: privacy, data, accounts, and how we operate.",
+  keywords: ["faq", "free tools", "qr generator", "online tools help"],
 };
 
 const EXTRA_FAQS = [

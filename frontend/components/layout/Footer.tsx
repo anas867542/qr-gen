@@ -14,6 +14,7 @@ export function Footer() {
           <span style={{ fontWeight: 600, fontSize: "0.85rem", color: "var(--muted)" }}>Links</span>
           <Link href="/">Home</Link>
           <Link href="/#tools">All tools</Link>
+          <Link href="/blog">Blog</Link>
           <Link href="/faq">FAQ</Link>
           <Link href="/about">About</Link>
           <Link href="/contact">Contact</Link>

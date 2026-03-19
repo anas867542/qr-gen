@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
-const CONTACT_EMAIL = process.env.NEXT_PUBLIC_CONTACT_EMAIL || "contact@yoursite.com";
+// Set NEXT_PUBLIC_CONTACT_EMAIL in .env to your real address, or create this inbox when you have your domain
+const CONTACT_EMAIL = process.env.NEXT_PUBLIC_CONTACT_EMAIL || "contact@freeonlinetools.com";
 
 export const metadata: Metadata = {
   title: "Contact — Free Online Tools",

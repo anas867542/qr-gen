@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { getRelatedTools, TOOL_CATEGORIES, type ToolMeta } from "@/lib/tools/config";
+import { getToolGuide } from "@/lib/toolGuides";
 
 interface ToolLayoutProps {
   tool: ToolMeta;
@@ -9,6 +10,7 @@ interface ToolLayoutProps {
 export function ToolLayout({ tool, children }: ToolLayoutProps) {
   const related = getRelatedTools(tool);
   const categoryLabel = TOOL_CATEGORIES[tool.category];
+  const guide = getToolGuide(tool.slug);
 
   return (
     <div className="tool-page">
@@ -33,6 +35,28 @@ export function ToolLayout({ tool, children }: ToolLayoutProps) {
           </p>
         </header>
         <div className="tool-content">{children}</div>
+
+        {/* SEO content: what it does, how to use, benefits, use cases (300–500+ words per tool) */}
+        {guide && (
+          <section className="tool-guide" aria-label="Guide">
+            <h2 className="tool-guide-title">About this tool</h2>
+            {guide.sections.map((section, i) => (
+              <div key={i} className="tool-guide-section">
+                <h3 className="tool-guide-heading">{section.heading}</h3>
+                {section.paragraphs.map((p, j) => (
+                  <p key={j} className="tool-guide-para">
+                    {p}
+                  </p>
+                ))}
+              </div>
+            ))}
+            <p className="tool-guide-more">
+              <Link href="/blog" className="tool-breadcrumb-link">
+                More guides and articles →
+              </Link>
+            </p>
+          </section>
+        )}
 
         {/* Clustering SEO: internal links to related tools (same topic cluster) */}
         {related.length > 0 && (

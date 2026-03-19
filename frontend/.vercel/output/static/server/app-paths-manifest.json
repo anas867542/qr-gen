@@ -1,0 +1,8 @@
+{
+  "/page": "app/page.js",
+  "/faq/page": "app/faq/page.js",
+  "/contact/page": "app/contact/page.js",
+  "/privacy/page": "app/privacy/page.js",
+  "/terms/page": "app/terms/page.js",
+  "/tools/qr-code-generator/page": "app/tools/qr-code-generator/page.js"
+}

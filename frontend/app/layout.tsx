@@ -9,6 +9,15 @@ export const metadata: Metadata = {
   title: "Free Online Tools — QR Generator, Password, JSON, Base64 & more",
   description:
     "Free online tools: QR code generator, password generator, UUID, JSON formatter, Base64 encoder, word counter, image compressor, and more. No signup.",
+  keywords: [
+    "free qr code generator",
+    "online tools",
+    "password generator",
+    "json formatter",
+    "base64 encoder",
+    "pdf tools",
+    "image compressor",
+  ],
   openGraph: {
     title: "Free Online Tools — Generators & Developer Utilities",
     description: "QR codes, passwords, JSON, Base64, word count, and more. All in your browser.",
