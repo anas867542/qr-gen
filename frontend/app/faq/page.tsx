@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { FaqSection } from "@/components/home/FaqSection";
+import { SITE_NAME } from "@/lib/siteConfig";
 
 export const metadata: Metadata = {
-  title: "FAQ — Frequently Asked Questions | Free Online Tools",
-  description:
-    "Frequently asked questions about our free online tools: privacy, data, accounts, and how we operate.",
-  keywords: ["faq", "free tools", "qr generator", "online tools help"],
+  title: `FAQ — Frequently Asked Questions | ${SITE_NAME}`,
+  description: `Frequently asked questions about ${SITE_NAME} free online tools: privacy, data, accounts, and how we operate.`,
+  keywords: ["faq", "free tools", "qr generator", "online tools help", "snapptools"],
 };
 
 const EXTRA_FAQS = [

@@ -191,9 +191,15 @@ export function getRelatedTools(tool: ToolMeta, limit = 4): ToolMeta[] {
   return TOOLS.filter((t) => t.category === tool.category && t.slug !== tool.slug).slice(0, limit);
 }
 
-const SITE_NAME = "Free Online Tools";
-const BASE_URL =
-  (typeof process !== "undefined" && process.env.NEXT_PUBLIC_SITE_URL) || "https://snapptools.net";
+import { SITE_NAME, getBaseUrl } from "@/lib/siteConfig";
+
+function getToolBaseUrl(): string {
+  try {
+    return getBaseUrl();
+  } catch {
+    return "https://snapptools.net";
+  }
+}
 
 /** SEO metadata for a tool page. Use in each tool page: export const metadata = getToolMetadata("slug"); */
 export function getToolMetadata(slug: string): import("next").Metadata {
@@ -201,7 +207,8 @@ export function getToolMetadata(slug: string): import("next").Metadata {
   if (!tool) {
     return { title: "Tool not found" };
   }
-  const url = `${BASE_URL.replace(/\/$/, "")}/tools/${tool.slug}`;
+  const base = getToolBaseUrl();
+  const url = `${base.replace(/\/$/, "")}/tools/${tool.slug}`;
   const title = `${tool.name} — ${SITE_NAME}`;
   const description =
     tool.description.length > 160 ? tool.description.slice(0, 157) + "…" : tool.description;

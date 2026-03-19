@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { SITE_NAME } from "@/lib/siteConfig";
 
-// Set NEXT_PUBLIC_CONTACT_EMAIL in .env to your real address, or create this inbox when you have your domain
-const CONTACT_EMAIL = process.env.NEXT_PUBLIC_CONTACT_EMAIL || "contact@freeonlinetools.com";
+const CONTACT_EMAIL = process.env.NEXT_PUBLIC_CONTACT_EMAIL || "contact@snapptools.net";
 
 export const metadata: Metadata = {
-  title: "Contact — Free Online Tools",
-  description: "Contact us for feedback, bug reports, or suggestions about our free online tools.",
+  title: `Contact — ${SITE_NAME}`,
+  description: `Contact us for feedback, bug reports, or suggestions about ${SITE_NAME} free online tools.`,
 };
 
 export default function ContactPage() {

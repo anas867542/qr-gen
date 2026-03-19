@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { SITE_NAME } from "@/lib/siteConfig";
 
 export const metadata: Metadata = {
-  title: "Terms of Service",
-  description: "Terms of use for our free online tools. Acceptable use, disclaimers, and your rights.",
+  title: `Terms & Conditions — ${SITE_NAME}`,
+  description: `Terms of use for ${SITE_NAME} free online tools. Acceptable use, disclaimers, and your rights.`,
 };
 
 export default function TermsPage() {

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { SITE_NAME } from "@/lib/siteConfig";
 
 export function Header() {
   return (
@@ -9,7 +10,7 @@ export function Header() {
             ◇
           </span>
           <span className="brand-text">
-            QR<span className="brand-accent">Gen</span>
+            {SITE_NAME}
           </span>
         </Link>
         <nav className="nav" aria-label="Primary">

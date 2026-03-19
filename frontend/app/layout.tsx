@@ -4,13 +4,15 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { CookieConsent } from "@/components/layout/CookieConsent";
 import { AdSlot } from "@/components/layout/AdSlot";
+import { SITE_NAME, SITE_TAGLINE } from "@/lib/siteConfig";
 
 export const metadata: Metadata = {
-  title: "Free Online Tools — QR Generator, Password, JSON, Base64 & more",
+  title: `${SITE_NAME} – ${SITE_TAGLINE}`,
   description:
-    "Free online tools: QR code generator, password generator, UUID, JSON formatter, Base64 encoder, word counter, image compressor, and more. No signup.",
+    "Snapptools offers free QR code generators, password generator, PDF tools, image tools and more. Create QR codes instantly online. No signup.",
   keywords: [
     "free qr code generator",
+    "snapptools",
     "online tools",
     "password generator",
     "json formatter",
@@ -19,8 +21,8 @@ export const metadata: Metadata = {
     "image compressor",
   ],
   openGraph: {
-    title: "Free Online Tools — Generators & Developer Utilities",
-    description: "QR codes, passwords, JSON, Base64, word count, and more. All in your browser.",
+    title: `${SITE_NAME} – ${SITE_TAGLINE}`,
+    description: "Free QR code generator, password generator, PDF and image tools. Create QR codes instantly online.",
     type: "website",
   },
   themeColor: "#0f0f12",
@@ -46,10 +48,10 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Organization",
-              name: "Free Online Tools",
-              url: (process.env.NEXT_PUBLIC_SITE_URL || "https://yoursite.com").replace(/\/$/, ""),
+              name: SITE_NAME,
+              url: process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") || "https://snapptools.net",
               description:
-                "Free online tools: QR generator, password generator, JSON formatter, image and PDF tools. No signup.",
+                "Snapptools: free QR code generator, password generator, JSON formatter, image and PDF tools. No signup.",
             }),
           }}
         />

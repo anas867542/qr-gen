@@ -1,14 +1,15 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { BLOG_ARTICLES } from "@/lib/blogArticles";
+import { SITE_NAME } from "@/lib/siteConfig";
 
 export const metadata: Metadata = {
-  title: "Blog — QR Codes, Tips & Guides | Free Online Tools",
+  title: `Blog — QR Codes, Tips & Guides | ${SITE_NAME}`,
   description:
     "Guides and articles about QR codes: what they are, how they work, uses for business, WhatsApp, security, and how to create free QR codes.",
   keywords: ["qr code blog", "qr code guide", "qr code tips", "free qr code", "qr code articles"],
   openGraph: {
-    title: "Blog — QR Codes & Free Tool Guides",
+    title: `Blog — QR Codes & Free Tool Guides | ${SITE_NAME}`,
     description: "Learn about QR codes, best practices, and how to use our free online tools.",
     type: "website",
   },

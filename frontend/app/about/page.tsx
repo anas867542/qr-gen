@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { SITE_NAME } from "@/lib/siteConfig";
 
 export const metadata: Metadata = {
-  title: "About — Free Online Tools",
-  description: "About our free online tools. We offer QR generator, password generator, JSON formatter, image and PDF tools—no signup, runs in your browser.",
+  title: `About — ${SITE_NAME}`,
+  description: `About ${SITE_NAME}. We offer free QR generator, password generator, JSON formatter, image and PDF tools—no signup, runs in your browser.`,
 };
 
 export default function AboutPage() {

@@ -1,18 +1,19 @@
 import Link from "next/link";
 import { TOOL_CATEGORIES } from "@/lib/tools/config";
 import type { ToolCategory } from "@/lib/tools/config";
+import { SITE_NAME } from "@/lib/siteConfig";
 
 const CATEGORY_ORDER: ToolCategory[] = ["generators", "developer", "text", "image", "pdf"];
 
 export function Footer() {
-  const contactEmail = process.env.NEXT_PUBLIC_CONTACT_EMAIL || "contact@freeonlinetools.com";
+  const contactEmail = process.env.NEXT_PUBLIC_CONTACT_EMAIL || "contact@snapptools.net";
 
   return (
     <footer className="site-footer">
       <div className="wrap footer-inner footer-grid">
         <div className="footer-brand">
           <span className="brand-text">
-            QR<span className="brand-accent">Gen</span>
+            {SITE_NAME}
           </span>
           <p className="footer-tagline">Free online tools for developers and everyone else. No signup required.</p>
           <p className="footer-request">
@@ -47,7 +48,7 @@ export function Footer() {
       </div>
       <div className="wrap" style={{ paddingTop: "1rem", borderTop: "1px solid var(--border)", marginTop: "1rem" }}>
         <p className="footer-copy" style={{ margin: 0 }}>
-          © {new Date().getFullYear()} Free Online Tools. All tools run in your browser; we respect your privacy.
+          © {new Date().getFullYear()} {SITE_NAME}. All tools run in your browser; we respect your privacy.
         </p>
       </div>
     </footer>

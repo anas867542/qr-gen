@@ -1,3 +1,5 @@
+import { SITE_NAME } from "@/lib/siteConfig";
+
 export function Hero() {
   return (
     <section className="hero">
@@ -6,6 +8,9 @@ export function Hero() {
         <h1 className="hero-title">
           Free online <span className="gradient-text">tools</span>
         </h1>
+        <p className="hero-welcome">
+          Welcome to {SITE_NAME} – your free online platform to generate QR codes, create strong passwords, format JSON, merge or split PDFs, resize images, and much more. All tools are 100% free, easy to use, and work instantly in your browser. Explore the tools below to get started.
+        </p>
         <p className="hero-lead">
           QR code generator, password generator, JSON formatter, Base64 encoder, word
           counter, image compressor, PDF merge and split, and more. One click, no account.

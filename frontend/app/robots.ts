@@ -1,13 +1,9 @@
 import type { MetadataRoute } from "next";
 
-const BASE =
-  process.env.NEXT_PUBLIC_SITE_URL ||
-  process.env.VERCEL_URL ||
-  "https://yoursite.com";
+import { getBaseUrl } from "@/lib/siteConfig";
 
 function baseUrl() {
-  if (BASE.startsWith("http")) return BASE.replace(/\/$/, "");
-  return `https://${BASE}`;
+  return getBaseUrl();
 }
 
 export default function robots(): MetadataRoute.Robots {

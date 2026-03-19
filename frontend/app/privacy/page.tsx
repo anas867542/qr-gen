@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { SITE_NAME } from "@/lib/siteConfig";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy",
-  description: "Privacy policy for this website. How we use cookies, data, and third-party services including advertising.",
+  title: `Privacy Policy — ${SITE_NAME}`,
+  description: `Privacy policy for ${SITE_NAME}. How we use cookies, data, and third-party services including advertising.`,
 };
 
 export default function PrivacyPage() {
