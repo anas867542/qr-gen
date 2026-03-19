@@ -3,12 +3,6 @@
 import { useState, useEffect, useCallback } from "react";
 import type { QrContentType } from "@/types";
 import { buildPayload } from "@/lib/qrPayload";
-import { fetchQrDataUrl, checkApiHealth } from "@/lib/api";
-
-const API_BASE =
-  typeof process !== "undefined" && process.env.NEXT_PUBLIC_API_URL
-    ? process.env.NEXT_PUBLIC_API_URL
-    : "http://localhost:3000";
 
 const TABS: { type: QrContentType; label: string }[] = [
   { type: "url", label: "URL" },
@@ -28,7 +22,6 @@ export function QrSection() {
   const [light, setLight] = useState("#ffffff");
 
   const [previewDataUrl, setPreviewDataUrl] = useState<string | null>(null);
-  const [apiStatus, setApiStatus] = useState<"checking" | "ok" | "off">("checking");
   const [error, setError] = useState("");
 
   const getPayload = useCallback(
@@ -66,25 +59,6 @@ export function QrSection() {
         return;
       }
 
-      const body = {
-        text: payload,
-        width: opts.width,
-        margin: opts.margin,
-        dark: opts.dark,
-        light: opts.light,
-        errorCorrectionLevel: opts.errorCorrectionLevel,
-      };
-
-      if (API_BASE) {
-        try {
-          const { dataUrl } = await fetchQrDataUrl(API_BASE, body);
-          setPreviewDataUrl(dataUrl);
-          return;
-        } catch {
-          // Fall through to client-side
-        }
-      }
-
       try {
         const QRCode = (await import("qrcode")).default;
         const dataUrl = await QRCode.toDataURL(payload, {
@@ -94,7 +68,7 @@ export function QrSection() {
           errorCorrectionLevel: opts.errorCorrectionLevel,
         });
         setPreviewDataUrl(dataUrl);
-      } catch (err) {
+      } catch {
         setPreviewDataUrl(null);
         if (showErrors)
           setError("Could not generate QR code. Try shorter text or different colors.");
@@ -111,14 +85,6 @@ export function QrSection() {
       a.click();
     }
   }, [previewDataUrl]);
-
-  useEffect(() => {
-    if (!API_BASE) {
-      setApiStatus("off");
-      return;
-    }
-    checkApiHealth(API_BASE).then((ok) => setApiStatus(ok ? "ok" : "off"));
-  }, []);
 
   useEffect(() => {
     const t = setTimeout(() => generate(false), 400);
@@ -291,14 +257,6 @@ export function QrSection() {
           )}
         </div>
         <p className="hint">Scan with any phone camera to test.</p>
-        <p
-          className={`api-status ${apiStatus === "ok" ? "api-ok" : ""} ${apiStatus === "off" ? "api-off" : ""}`}
-          aria-live="polite"
-        >
-          {apiStatus === "checking" && "Checking…"}
-          {apiStatus === "ok" && "API connected — generating on server"}
-          {apiStatus === "off" && "API offline — using browser generator"}
-        </p>
       </aside>
     </>
   );
