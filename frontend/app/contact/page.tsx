@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { SITE_NAME } from "@/lib/siteConfig";
-
-const CONTACT_EMAIL = process.env.NEXT_PUBLIC_CONTACT_EMAIL || "contact@snapptools.net";
+import { SITE_NAME, getContactEmail } from "@/lib/siteConfig";
 
 export const metadata: Metadata = {
   title: `Contact — ${SITE_NAME}`,
@@ -10,6 +8,7 @@ export const metadata: Metadata = {
 };
 
 export default function ContactPage() {
+  const contactEmail = getContactEmail();
   return (
     <div className="wrap" style={{ paddingTop: "2rem", paddingBottom: "4rem", maxWidth: "720px" }}>
       <nav style={{ marginBottom: "1.5rem" }}>
@@ -26,10 +25,10 @@ export default function ContactPage() {
         <p>
           <strong>Email:</strong>{" "}
           <a
-            href={`mailto:${CONTACT_EMAIL}`}
+            href={`mailto:${contactEmail}`}
             style={{ color: "var(--accent)", textDecoration: "none" }}
           >
-            {CONTACT_EMAIL}
+            {contactEmail}
           </a>
         </p>
         <p style={{ marginTop: "1rem" }}>

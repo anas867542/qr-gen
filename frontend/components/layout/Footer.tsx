@@ -1,12 +1,12 @@
 import Link from "next/link";
 import { TOOL_CATEGORIES } from "@/lib/tools/config";
 import type { ToolCategory } from "@/lib/tools/config";
-import { SITE_NAME } from "@/lib/siteConfig";
+import { SITE_NAME, getContactEmail } from "@/lib/siteConfig";
 
 const CATEGORY_ORDER: ToolCategory[] = ["generators", "developer", "text", "image", "pdf"];
 
 export function Footer() {
-  const contactEmail = process.env.NEXT_PUBLIC_CONTACT_EMAIL || "contact@snapptools.net";
+  const contactEmail = getContactEmail();
 
   return (
     <footer className="site-footer">

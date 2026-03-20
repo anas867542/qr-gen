@@ -13,7 +13,7 @@ Follow these steps in order so your site is live, indexed, and ready to earn fro
    | Variable | Value | Why |
    |----------|--------|-----|
    | `NEXT_PUBLIC_SITE_URL` | `https://snapptools.net` | Sitemap, canonicals, Open Graph URLs |
-   | `NEXT_PUBLIC_CONTACT_EMAIL` | Your real email (e.g. `contact@snapptools.net`) | Shown on Contact page; create this inbox |
+   | `NEXT_PUBLIC_CONTACT_EMAIL` | Your email (default: `snapptools138@gmail.com`) | Shown on Contact page and footer |
 
 2. Redeploy after saving the variables.
 
@@ -108,7 +108,7 @@ The more quality traffic you get, the more impressions and clicks you’ll have,
 
 ## Quick checklist
 
-- [ ] Deploy with `NEXT_PUBLIC_SITE_URL=https://snapptools.net` and real `NEXT_PUBLIC_CONTACT_EMAIL`
+- [ ] Deploy with `NEXT_PUBLIC_SITE_URL=https://snapptools.net` and `NEXT_PUBLIC_CONTACT_EMAIL=snapptools138@gmail.com` (or your email)
 - [ ] Verify site works at https://snapptools.net
 - [ ] Add and verify property in Google Search Console
 - [ ] Submit sitemap: `sitemap.xml`
