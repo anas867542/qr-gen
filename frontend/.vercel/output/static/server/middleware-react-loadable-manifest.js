@@ -1,1 +1,0 @@
-self.__REACT_LOADABLE_MANIFEST="{\"components\\\\home\\\\QrSection.tsx -> qrcode\":{\"id\":\"components\\\\home\\\\QrSection.tsx -> qrcode\",\"files\":[\"static/chunks/_app-pages-browser_node_modules_qrcode_lib_browser_js.js\"]}}"

@@ -70,7 +70,13 @@ export default function RootLayout({
               url: siteUrl,
               logo: iconUrl,
               description:
-                "Snapptools: free QR code generator, password generator, JSON formatter, image and PDF tools. No signup.",
+                "Free online tools for everyone — QR code generator, password generator, JSON formatter, PDF tools, image tools, and more. No signup, runs in your browser.",
+              contactPoint: {
+                "@type": "ContactPoint",
+                contactType: "customer support",
+                url: `${siteUrl}/contact`,
+              },
+              sameAs: [],
             }),
           }}
         />

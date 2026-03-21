@@ -37,6 +37,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: article.description,
       type: "article",
       publishedTime: article.date,
+      ...(article.dateModified ? { modifiedTime: article.dateModified } : {}),
       url: `${base}/blog/${slug}`,
       siteName: SITE_NAME,
     },
@@ -57,7 +58,7 @@ export default async function BlogArticlePage({ params }: Props) {
     description: article.description,
     url: articleUrl,
     datePublished: article.date,
-    dateModified: article.date,
+    dateModified: article.dateModified ?? article.date,
     author: {
       "@type": "Organization",
       name: SITE_NAME,

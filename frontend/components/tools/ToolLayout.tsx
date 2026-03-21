@@ -31,6 +31,11 @@ export function ToolLayout({ tool, children }: ToolLayoutProps) {
   const toolUrl = `${baseUrl}/tools/${tool.slug}`;
   const description = tool.metaDescription ?? tool.description;
 
+  const featureList =
+    guide?.features && guide.features.length > 0
+      ? guide.features
+      : ["Free to use", "Runs in your browser", "No signup required", "Your data stays on your device"];
+
   const softwareAppJsonLd = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
@@ -44,12 +49,37 @@ export function ToolLayout({ tool, children }: ToolLayoutProps) {
       priceCurrency: "USD",
     },
     description: description,
-    featureList: guide?.features || [],
+    featureList,
     provider: {
       "@type": "Organization",
       name: SITE_NAME,
       url: baseUrl,
     },
+  };
+
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: `${baseUrl}/`,
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "All Tools",
+        item: `${baseUrl}/#tools`,
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: tool.name,
+        item: toolUrl,
+      },
+    ],
   };
 
   const faqJsonLd =
@@ -70,6 +100,10 @@ export function ToolLayout({ tool, children }: ToolLayoutProps) {
 
   return (
     <div className="tool-page">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareAppJsonLd) }}

@@ -146,61 +146,81 @@ export const TOOL_GUIDES: ToolGuide[] = [
     slug: "json-formatter",
     sections: [
       {
-        heading: "What is a JSON formatter?",
+        heading: "What is a JSON Formatter?",
         paragraphs: [
-          "A JSON formatter (often called a JSON beautifier and validator) takes compact or messy JSON text and pretty-prints it with indentation so objects and arrays are easy to scan. Our JSON formatter online free tool also checks syntax: missing commas, stray quotes, or unbalanced brackets show up as validation errors so you can fix them quickly. JSON is the lingua franca of web APIs, mobile apps, and many config files—so a fast JSON viewer free experience saves hours when debugging payloads or reading third-party responses.",
-          "Whether you need json pretty print online for a Slack snippet or format json online tool output before committing to Git, the goal is the same: readable structure plus confidence that the document is valid JSON.",
+          "A JSON formatter (also called a JSON beautifier or JSON pretty printer) takes compact or unreadable JSON text and restructures it with consistent indentation, line breaks, and spacing. The result is human-readable JSON that is much easier to scan, debug, and share.",
+          "JSON (JavaScript Object Notation) is the data format used by almost every web API, configuration file, and database export. When APIs return data, it usually arrives as a single compressed line. A formatter separates each key-value pair onto its own line, indents nested objects and arrays, and makes the structure visible.",
+          "A JSON validator checks whether your JSON follows correct syntax rules. Common mistakes include trailing commas, unquoted keys, mismatched brackets, and single quotes instead of double quotes. Our tool flags these errors with context so you can fix them fast.",
         ],
       },
       {
-        heading: "How to use this JSON tool",
+        heading: "How to Use This JSON Formatter",
         paragraphs: [
-          "Step 1: Copy your minified API response, config blob, or file contents into the input area.",
-          "Step 2: Run format / validate. The tool indents nested objects and arrays for a clear JSON tree view.",
-          "Step 3: Read any error message and line hint; common issues include trailing commas (not allowed in strict JSON), single quotes instead of double quotes, or unescaped characters.",
-          "Step 4: Fix the source and validate again until no errors appear.",
-          "Step 5: Copy the formatted JSON for documentation, tickets, or your codebase.",
+          "Step 1: Paste your JSON into the input box — minified JSON, partially formatted JSON, or JSON with suspected errors.",
+          "Step 2: Click Format / Validate. The tool checks syntax and returns a result instantly.",
+          "Step 3: If the JSON is valid, the output shows formatted JSON with proper indentation. Copy it with the copy button.",
+          "Step 4: If there are errors, read the message with line and character hints. Fix the input and reformat.",
+          "Step 5: Use the output in your editor, config file, documentation, or tickets. No account needed — formatting runs entirely in your browser.",
         ],
       },
       {
-        heading: "Benefits",
+        heading: "Common JSON Errors This Tool Catches",
         paragraphs: [
-          "You get instant feedback without installing desktop software. Because parsing runs in the browser, sensitive payloads are not uploaded to our servers as part of formatting—ideal for internal API samples. Developers, QA, and technical writers all benefit from a single json beautifier and validator workflow.",
+          "Trailing comma — a comma after the last item in an object or array is invalid JSON (though valid in JavaScript). Example: {\"key\": \"value\",} will be flagged.",
+          "Unquoted keys — JSON requires double-quoted keys. {key: \"value\"} is JavaScript-style, not valid JSON; use {\"key\": \"value\"}.",
+          "Single quotes — JSON only accepts double quotes. Replace {'key': 'value'} with {\"key\": \"value\"}.",
+          "Missing commas — forgetting a comma between items breaks parsing; the validator points near the problem.",
+          "Mismatched brackets — opening [ and closing }, or vice versa, causes parse failure.",
+          "Unescaped special characters — literal newlines or tabs inside strings must be escaped as \\n or \\t.",
         ],
       },
       {
-        heading: "Typical use cases",
+        heading: "Why Use a Browser-Based JSON Formatter?",
         paragraphs: [
-          "Debugging REST and GraphQL responses, cleaning up logs, preparing examples for documentation, validating config before deployment, and teaching JSON structure to students. If you searched for json formatter online free or json viewer free, this page combines readability and validation in one place.",
+          "Privacy: API responses with user data or credentials should not go to unknown servers — our formatter runs in your browser so the JSON never leaves your device.",
+          "Speed: no server round-trip; validation happens in milliseconds for typical payloads.",
+          "No installation: no extension or account. Works offline after the page loads.",
         ],
       },
     ],
     features: [
-      "Format JSON online with indentation (pretty print)",
-      "Validate JSON and surface syntax errors",
-      "Works in the browser—no signup",
-      "Copy-paste friendly for API work",
-      "Helpful for configs, logs, and tutorials",
+      "Format and indent JSON with consistent spacing",
+      "Validate JSON syntax and catch errors by line",
+      "Beautify minified or compressed JSON",
+      "Highlight syntax errors with location details",
+      "Copy formatted output in one click",
+      "Runs entirely in your browser — no data uploaded",
+      "Free with no signup required",
     ],
     faqs: [
       {
         question: "Is this JSON formatter free?",
-        answer: "Yes. Format and validate as often as you like at no cost.",
+        answer: "Yes. Format and validate as much JSON as you want at no cost, with no account required.",
       },
       {
-        question: "Do you upload my JSON to a server?",
+        question: "Does this tool upload my JSON to your servers?",
         answer:
-          "Formatting and validation run locally in your browser; your pasted data is not sent to our servers for processing.",
+          "No. All formatting and validation runs in your browser using JavaScript. Your JSON data never leaves your device.",
       },
       {
-        question: "Why does valid JavaScript object literal fail?",
+        question: "What is the difference between formatting and validating JSON?",
         answer:
-          "Strict JSON requires double quotes around keys and strings and does not allow trailing commas or comments. Convert those to valid JSON first.",
+          "Formatting (beautifying) makes JSON readable with indentation and line breaks. Validating checks strict syntax rules. This tool does both together.",
       },
       {
-        question: "Can I use this for large files?",
+        question: "Can this tool handle large JSON files?",
         answer:
-          "Very large pastes may slow your browser. For huge files, consider streaming tools or local editors—but for typical API payloads this tool works well.",
+          "Yes for typical API responses and configs. Very large files (several megabytes) may be slower depending on your device.",
+      },
+      {
+        question: "Why does my JSON fail validation even though it works in JavaScript?",
+        answer:
+          "JavaScript allows trailing commas, single quotes, and comments; strict JSON does not. Use this validator for JSON compliance.",
+      },
+      {
+        question: "Can I use this to format JSON from an API response?",
+        answer:
+          "Yes. Paste the raw body from Postman, browser DevTools, or your terminal for instant readable output.",
       },
     ],
   },
@@ -208,29 +228,73 @@ export const TOOL_GUIDES: ToolGuide[] = [
     slug: "merge-pdf",
     sections: [
       {
-        heading: "What is this tool?",
+        heading: "What does merging PDFs mean?",
         paragraphs: [
-          "The merge PDF tool combines multiple PDF files into one. You select the order of the files and the tool produces a single PDF for download. Processing is done in your browser; files are not uploaded to our servers.",
-          "Merging is useful when you have several documents (e.g. reports, chapters, scans) that you want as one file for sharing or printing.",
+          "Merging (or combining) PDFs means taking two or more separate PDF files and joining them into a single PDF document. The pages appear in the order you choose, exactly as they were in the original files.",
+          "Common reasons to merge PDFs: work and business (cover letter, resume, portfolio in one application); finance and admin (monthly statements into one annual file); education (lecture notes and handouts before submission); legal (contract and appendices in one file); projects (chapters into a final document). Instead of five attachments, one merged PDF gives recipients everything in order.",
         ],
       },
       {
-        heading: "How to use it",
+        heading: "How to merge PDF files online (step by step)",
         paragraphs: [
-          "Click to select one or more PDF files from your device. They appear in a list; drag to reorder if needed. Click merge and wait for the process to finish. Download the merged PDF. You can repeat with a new set of files anytime.",
+          "Step 1: Click Upload PDFs or drag files onto the upload area. Add two or more PDFs at once.",
+          "Step 2: Files appear in a list with filename and page count. Drag items to rearrange — the final PDF follows this order top to bottom.",
+          "Step 3: The first file in the list becomes the first pages of the merged document. Review order before merging.",
+          "Step 4: Click Merge PDFs. The tool combines all pages in your browser.",
+          "Step 5: Click Download to save the merged PDF. The process runs entirely in your browser — we never store your PDFs on our servers.",
         ],
       },
       {
-        heading: "Benefits",
+        heading: "Tips for better results",
         paragraphs: [
-          "No signup; no server upload. Works offline after the page loads. Keeps file order under your control. No page limit for typical use.",
+          "Check page orientation before merging — mixed portrait and landscape is fine on screen but can look inconsistent in print.",
+          "Compress large PDFs first with our PDF Compressor if the combined file must fit email limits, then merge.",
+          "Name files clearly (e.g. 01-cover-letter.pdf, 02-resume.pdf) so sorting is easy.",
+          "Keep originals: merging creates a new file; your source PDFs stay unchanged.",
+          "Very large files (100MB+) depend on your device; typical documents merge quickly.",
         ],
       },
+    ],
+    features: [
+      "Merge unlimited PDF files in one session",
+      "Drag-and-drop reordering before merging",
+      "Shows filename and page count per file",
+      "Download merged PDF instantly",
+      "Runs in your browser — files not uploaded to servers",
+      "Free with no signup required",
+    ],
+    faqs: [
       {
-        heading: "Use cases",
-        paragraphs: [
-          "Combining invoices or receipts into one PDF. Merging chapters into a single ebook or report. Putting together scanned pages in order. Creating one PDF from multiple exports or prints.",
-        ],
+        question: "Is this PDF merger really free?",
+        answer: "Yes. Combine as many PDF files as you need at no cost. No account or payment required.",
+      },
+      {
+        question: "Is there a file size limit?",
+        answer:
+          "There is no server-side limit because merging happens in your browser. Very large files may be slow depending on device memory; typical documents merge instantly.",
+      },
+      {
+        question: "How many PDFs can I merge at once?",
+        answer: "You can add as many files as you need — there is no hard cap on file count.",
+      },
+      {
+        question: "Are my PDF files uploaded to your servers?",
+        answer:
+          "No. Merging runs entirely in your browser using JavaScript. Your documents are not sent to our servers.",
+      },
+      {
+        question: "Can I change the page order after uploading?",
+        answer:
+          "Yes. Drag files in the list to change order before clicking Merge. The final PDF follows the list from top to bottom.",
+      },
+      {
+        question: "Will passwords or restrictions be preserved?",
+        answer:
+          "Unlock password-protected PDFs first. The tool works with standard, unlocked PDF files.",
+      },
+      {
+        question: "Can I merge PDFs on mobile?",
+        answer: "Yes. Use your device file picker; the tool works in mobile browsers.",
       },
     ],
   },
@@ -238,61 +302,77 @@ export const TOOL_GUIDES: ToolGuide[] = [
     slug: "image-compressor",
     sections: [
       {
-        heading: "What is an image compressor?",
+        heading: "What is Image Compression?",
         paragraphs: [
-          "An image compressor reduces file size by adjusting encoding quality and, in some workflows, dimensions—so pages load faster and attachments stay under limits. Our image compressor fast online experience runs locally: you choose images, set how aggressive compression should be, and download lighter files. Many people search for compress image without losing quality; in practice you trade a small amount of detail for much smaller bytes, which is usually invisible on the web when settings are sensible.",
-          "Smaller images improve Core Web Vitals and user experience, which supports SEO and conversion. Whether you need compress image online free for a portfolio or product photos, the goal is predictable file weight without re-shooting assets.",
+          "Image compression reduces the file size of an image by removing data that the human eye cannot easily distinguish. The result is a smaller file that looks nearly identical to the original but loads faster on web pages, uses less storage, and uploads more quickly.",
+          "Lossy compression (JPEG and WebP) discards some data permanently for much smaller files. The quality slider controls how much is removed — higher quality means a larger file; 75–85% is often indistinguishable from the original for web use.",
+          "Lossless compression (PNG) removes redundant metadata without changing pixels. Size drops less than lossy, but quality is preserved. Our tool applies the right approach per format; you choose the quality level.",
         ],
       },
       {
-        heading: "How to use this compressor",
+        heading: "How to Compress an Image Online (Step by Step)",
         paragraphs: [
-          "Step 1: Add one or more JPEG, PNG, or WebP files from your device.",
-          "Step 2: Choose quality or preset options if available—start moderate and tighten if you need smaller files.",
-          "Step 3: Run compression and compare before/after size (and visually zoom in if quality matters).",
-          "Step 4: Download the optimized images and upload them to your site, marketplace, or email.",
-          "Step 5: Keep originals archived separately if you might need maximum quality later.",
+          "Step 1: Click the upload area or drag a JPEG, PNG, or WebP file onto the page.",
+          "Step 2: Review the preview and current file size.",
+          "Step 3: Use the quality slider — 80 is a good starting point; it often cuts size 50–70% with little visible change.",
+          "Step 4: Compare before and after sizes. When satisfied, click Download. Your original file on disk is not modified.",
+          "The process runs in your browser — your image is not uploaded to our servers.",
         ],
       },
       {
-        heading: "Benefits",
+        heading: "How Much Can You Reduce Image File Size?",
         paragraphs: [
-          "You avoid slow uploads on mobile networks, reduce storage costs, and meet platform size caps. Because processing stays in the browser, product or client images are not sent to us for compression—useful for privacy. This is a practical free image compression option for bloggers, sellers, and developers alike.",
+          "Results vary by image type and quality. As a guide: JPEG at 85% often yields 30–50% smaller files; at 75%, 50–65%; at 60%, 65–75%. PNG lossless often saves 10–30%. WebP at 80% can be 40–60% smaller than equivalent JPEG.",
+          "Photos with gradients compress more than flat screenshots. A 3MB phone photo at quality 80 often becomes 400–700KB — fine for web and email.",
         ],
       },
       {
-        heading: "Common use cases",
+        heading: "When Should You Compress Images?",
         paragraphs: [
-          "Blog and landing page hero images, ecommerce thumbnails, email newsletters, chat attachments, and social posts. If you searched for image compressor fast online or compress image without losing quality, start with a balanced quality setting and iterate.",
+          "Before uploading to a website — large images hurt load speed and rankings. Before email — many servers cap attachments at 5–10MB. Before social posts — platforms recompress anyway; starting optimized helps. Before messaging apps — pre-compress for better control. During web or app development — every KB improves mobile load time.",
         ],
       },
     ],
     features: [
-      "Compress image online free in the browser",
-      "Supports common formats (JPEG, PNG, WebP)",
-      "Adjust quality to balance size and clarity",
-      "No signup; quick download",
-      "Helps pages load faster (SEO-friendly)",
+      "Compress JPEG, PNG, and WebP in your browser",
+      "Quality slider for file size vs visual quality",
+      "Real-time before/after file size comparison",
+      "One-click download; original unchanged on your device",
+      "No upload to servers — privacy-friendly",
+      "Free with no signup required",
     ],
     faqs: [
       {
-        question: "Is compression really free?",
-        answer: "Yes. Compress images without a paid plan or account.",
+        question: "Is this image compressor really free?",
+        answer: "Yes. Compress as many images as you like at no cost. No account or signup required.",
       },
       {
-        question: "Do you upload my photos?",
+        question: "Does compressing reduce width and height?",
         answer:
-          "Compression runs locally in your browser; your files are not sent to our servers for processing.",
+          "This tool focuses on file size, not dimensions. Pixel size stays the same unless you also use our Image Resizer.",
       },
       {
-        question: "Will my image look worse?",
-        answer:
-          "Strong compression can add artifacts. Use a moderate setting for photos you care about, and always preview before replacing originals.",
+        question: "Will anyone see my images?",
+        answer: "No. Compression runs in your browser; images are not uploaded to our servers.",
       },
       {
-        question: "Is PNG or JPEG better for photos?",
+        question: "What quality setting should I use?",
         answer:
-          "JPEG is usually smaller for photos; PNG is better for graphics with sharp edges or transparency. Pick the format that matches your subject.",
+          "For most web images, 75–85 works well. Use 85–90 for product or portfolio shots; 60–70 for thumbnails or backgrounds.",
+      },
+      {
+        question: "Can I compress PNG images?",
+        answer: "Yes. PNG handling is typically lossless — smaller files without visible quality loss.",
+      },
+      {
+        question: "What is the maximum file size?",
+        answer:
+          "There is no hard server limit because processing is local. Very large files (20MB+) may be slower on low-memory devices.",
+      },
+      {
+        question: "Can I compress multiple images at once?",
+        answer:
+          "If the tool supports batch upload, use it; otherwise process one at a time or refresh between files.",
       },
     ],
   },
@@ -324,16 +404,46 @@ export const TOOL_GUIDES: ToolGuide[] = [
     slug: "base64-encoder",
     sections: [
       {
-        heading: "What is this tool?",
+        heading: "What is Base64 Encoding?",
         paragraphs: [
-          "The Base64 encoder and decoder converts text or binary data to Base64 encoding and back. Base64 is often used to embed small images or data in URLs, HTML, or JSON without breaking the format. This tool works with text input and output in the browser.",
+          "Base64 converts binary data or text into a string of ASCII characters (A–Z, a–z, 0–9, +, /) so it can pass through systems that only handle text. It is not encryption — anyone can decode it.",
+          "Common uses: embedding small images in HTML or CSS as data URLs; sending binary data inside JSON or XML APIs; MIME email attachments; avoiding characters that break parsers. Base64 grows size by about 33% — use it for compatibility, not to shrink files.",
         ],
       },
       {
-        heading: "How to use it and use cases",
+        heading: "How to Use This Base64 Tool",
         paragraphs: [
-          "Paste or type text in the input, then encode or decode as needed. Copy the result for use in your project. Common uses: embedding small images as data URLs, encoding credentials or tokens for APIs, and debugging payloads.",
+          "To encode: choose Encode, paste plain text, copy the Base64 output.",
+          "To decode: choose Decode, paste a Base64 string, read the plain text. Invalid Base64 shows an error.",
+          "All processing runs in your browser — no data is sent to our servers.",
         ],
+      },
+    ],
+    features: [
+      "Encode text to Base64 and decode back to text",
+      "Instant results in the browser",
+      "Copy output in one click",
+      "No signup; private local processing",
+    ],
+    faqs: [
+      {
+        question: "Is Base64 the same as encryption?",
+        answer:
+          "No. Base64 is encoding, not encryption. Anyone with a decoder can reverse it. Do not use Base64 to protect secrets.",
+      },
+      {
+        question: "Why does Base64 end with = or ==?",
+        answer: "That is padding so the encoded length is a multiple of four characters.",
+      },
+      {
+        question: "Can I Base64 encode an image?",
+        answer:
+          "This tool is for text strings. For images as data URLs, use our Image to Base64 Converter.",
+      },
+      {
+        question: "Is Base64 the same as URL encoding?",
+        answer:
+          "No. Base64 uses + and / which are not URL-safe. For query parameters, use our URL Encoder.",
       },
     ],
   },
@@ -536,16 +646,46 @@ export const TOOL_GUIDES: ToolGuide[] = [
     slug: "url-encoder",
     sections: [
       {
-        heading: "What is this tool?",
+        heading: "What is URL Encoding?",
         paragraphs: [
-          "The URL encoder and decoder converts special characters in strings to percent-encoded form (and back). Needed when building URLs or handling form data so that characters like spaces and ampersands are transmitted correctly.",
+          "URL encoding (percent encoding) turns characters that are not allowed in URLs into a safe form: a % followed by two hex digits (e.g. space → %20, & → %26). That way browsers and servers transmit values correctly.",
+          "URLs only allow a limited character set per RFC 3986. Spaces, #, &, and = have special meaning in URLs, so literal data must be encoded. Typical uses: search queries in ?q=, passing emails or paths as parameters, GET form data, debugging broken links, API query strings with user input.",
         ],
       },
       {
-        heading: "Use cases",
+        heading: "How to Use This URL Encoder / Decoder",
         paragraphs: [
-          "Encoding query parameters, form values, or path segments. Decoding URLs or API responses to read the original string.",
+          "Encode: open Encode, paste text with spaces or special characters, copy the percent-encoded result.",
+          "Decode: open Decode, paste something like hello%20world%21, read the readable text.",
+          "Encode only parameter values, not an entire URL — otherwise you would encode :// and ? which are structural.",
         ],
+      },
+    ],
+    features: [
+      "Percent-encode and decode strings",
+      "Instant results in the browser",
+      "No signup; local processing",
+    ],
+    faqs: [
+      {
+        question: "What is the difference between %20 and + for spaces?",
+        answer:
+          "%20 is standard percent encoding. + means space in application/x-www-form-urlencoded (HTML forms). For paths prefer %20; forms often use +.",
+      },
+      {
+        question: "Should I encode an entire URL?",
+        answer:
+          "Encode only the values inside query parameters, not the full URL structure.",
+      },
+      {
+        question: "Which characters do not need encoding?",
+        answer:
+          "Letters, digits, and - _ . ~ are unreserved and usually safe unencoded.",
+      },
+      {
+        question: "Is URL encoding the same as Base64?",
+        answer:
+          "No. URL encoding uses % for unsafe characters; Base64 is a different alphabet for binary-as-text.",
       },
     ],
   },

@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import { Hero } from "@/components/home/Hero";
 import { TrustStrip } from "@/components/home/TrustStrip";
-import { WhatHowWhoSection } from "@/components/home/WhatHowWhoSection";
-import { HomepageAuthoritySection } from "@/components/home/HomepageAuthoritySection";
+import { HomepageToolsIncludedSection } from "@/components/home/HomepageToolsIncludedSection";
 import { ToolsHub } from "@/components/home/ToolsHub";
+import { HomepagePopularToolsSection } from "@/components/home/HomepagePopularToolsSection";
+import { HomepageWhySnapptoolsSection } from "@/components/home/HomepageWhySnapptoolsSection";
 import { HomepageGuidesSection } from "@/components/home/HomepageGuidesSection";
 import { FaqSection } from "@/components/home/FaqSection";
 import { SITE_NAME, getBaseUrl } from "@/lib/siteConfig";
@@ -11,23 +12,23 @@ import { SITE_NAME, getBaseUrl } from "@/lib/siteConfig";
 const homeUrl = getBaseUrl();
 
 export const metadata: Metadata = {
-  title: `Free Online Tools for Essays, QR Codes, JSON & PDF | ${SITE_NAME}`,
+  title: `${SITE_NAME} – Free Online Tools: QR Code, PDF, Image & Developer Utilities`,
   description:
-    "Problem-solving guides + free tools: word counter for students, QR code generator (WhatsApp & links), JSON formatter, password generator, PDF merge/compress, image resize—all in your browser, no signup.",
+    "Free browser-based tools for everyone — generate QR codes, merge PDFs, compress images, format JSON, create strong passwords, and more. No signup, no uploads. Instant results.",
   keywords: [
-    "free word counter online",
-    "qr code generator for whatsapp",
-    "free qr code generator online",
-    "json formatter online free",
-    "online tools for students",
-    "merge pdf online free",
+    "free online tools",
+    "qr code generator",
+    "merge pdf free",
+    "json formatter",
+    "image compressor",
+    "word counter",
     "snapptools",
   ],
   alternates: { canonical: "/" },
   openGraph: {
-    title: `Free Online Tools & Guides | ${SITE_NAME}`,
+    title: `${SITE_NAME} – Free Online Tools: QR Code, PDF, Image & Developer Utilities`,
     description:
-      "Guides + free browser tools: word counter, QR codes, JSON, passwords, PDFs, images. Built for students, creators, and developers.",
+      "Free browser-based tools — QR codes, passwords, JSON formatter, PDF merger, image compressor, and more. No signup, runs in your browser.",
     url: homeUrl,
     type: "website",
     siteName: SITE_NAME,
@@ -39,11 +40,12 @@ export default function HomePage() {
     <>
       <Hero />
       <TrustStrip />
-      <WhatHowWhoSection />
-      <HomepageAuthoritySection />
+      <HomepageToolsIncludedSection />
       <section id="tools" className="main-section">
         <ToolsHub />
       </section>
+      <HomepagePopularToolsSection />
+      <HomepageWhySnapptoolsSection />
       <HomepageGuidesSection />
       <FaqSection />
     </>

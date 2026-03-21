@@ -14,6 +14,7 @@ export const TOOL_TO_BLOG_SLUGS: Record<string, string[]> = {
   "password-generator": ["password-generator-complete-guide", "strong-password-checklist-2026"],
   "json-formatter": ["json-formatter-guide", "json-pretty-print-beginners"],
   "merge-pdf": [
+    "how-to-merge-pdf-free",
     "pdf-tools-guide-merge-split-compress",
     "merge-pdf-online-free-guide",
     "free-pdf-tools-small-business",
@@ -22,10 +23,14 @@ export const TOOL_TO_BLOG_SLUGS: Record<string, string[]> = {
   "compress-pdf": ["pdf-tools-guide-merge-split-compress", "free-pdf-tools-small-business"],
   "pdf-to-word": ["pdf-tools-guide-merge-split-compress"],
   "word-to-pdf": ["pdf-tools-guide-merge-split-compress"],
-  "image-compressor": ["image-compression-guide", "compress-images-faster-website-loading"],
-  "image-resizer": ["image-compression-guide", "resize-images-social-media-free"],
+  "image-compressor": [
+    "png-vs-jpg-vs-webp",
+    "image-compression-guide",
+    "compress-images-faster-website-loading",
+  ],
+  "image-resizer": ["how-to-resize-image-online", "image-compression-guide", "resize-images-social-media-free"],
   "png-to-jpg": ["image-compression-guide"],
-  "jpg-to-webp": ["image-compression-guide"],
+  "jpg-to-webp": ["jpg-to-webp-converter-guide", "image-compression-guide"],
   "base64-encoder": ["base64-encoder-guide"],
   "word-counter": [
     "best-free-word-counter-tools-2026",

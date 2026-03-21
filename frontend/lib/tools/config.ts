@@ -105,12 +105,12 @@ export const TOOLS: ToolMeta[] = [
     name: "JSON Formatter / Validator",
     description: "Format, validate, and beautify JSON. Detect syntax errors.",
     category: "developer",
-    metaTitle: "JSON Formatter & Validator – Beautify JSON Online | Snapptools",
+    metaTitle: "JSON Formatter & Validator – Beautify & Validate JSON Online | Snapptools",
     metaDescription:
-      "Format, validate, and beautify JSON instantly. Detects syntax errors and highlights them. Free online JSON formatter — no signup, no data uploaded.",
-    h1Title: "JSON Formatter & Beautifier Online",
+      "Format, validate, and beautify JSON instantly online. Detect syntax errors, pretty-print nested objects, and clean up minified JSON — free, no signup, runs in your browser.",
+    h1Title: "Free JSON Formatter, Validator & Beautifier Online",
     introLead:
-      "Paste minified or broken JSON and get readable, indented output with clear validation errors. Perfect for APIs, configs, and debugging.",
+      "Paste minified or broken JSON and get a clean, indented result in one click. Our free JSON formatter validates syntax, highlights errors by line, and pretty-prints nested objects — all in your browser with no data uploaded.",
     keywords: [
       "json formatter online free",
       "json beautifier and validator",
@@ -129,7 +129,10 @@ export const TOOLS: ToolMeta[] = [
     category: "developer",
     metaTitle: "Base64 Encoder & Decoder – Free Online Tool | Snapptools",
     metaDescription:
-      "Encode text to Base64 or decode Base64 back to text instantly. Free, private, and runs entirely in your browser. No signup required.",
+      "Encode text to Base64 or decode Base64 strings back to plain text instantly. Free, private, and runs entirely in your browser. No signup required.",
+    h1Title: "Free Base64 Encoder & Decoder Online",
+    introLead:
+      "Encode any text string to Base64, or paste a Base64 string to decode it back to plain text — instantly, in your browser, with nothing uploaded to our servers.",
     keywords: ["base64", "encode", "decode"],
   },
   {
@@ -137,9 +140,12 @@ export const TOOLS: ToolMeta[] = [
     name: "URL Encoder / Decoder",
     description: "Encode or decode URL-encoded (percent-encoded) strings.",
     category: "developer",
-    metaTitle: "URL Encoder & Decoder – Percent-Encode Strings Free | Snapptools",
+    metaTitle: "URL Encoder & Decoder – Percent-Encode Strings Online Free | Snapptools",
     metaDescription:
-      "Encode or decode URL percent-encoded strings online. Fast, free, and works in your browser. No signup or installation required.",
+      "Encode special characters in URLs to percent-encoded format, or decode percent-encoded strings back to readable text. Free, instant, runs in your browser.",
+    h1Title: "Free URL Encoder & Decoder Online",
+    introLead:
+      "Convert any string to URL-safe percent-encoded format, or decode a percent-encoded URL back to readable text. Instant results, no signup, runs in your browser.",
     keywords: ["url encode", "percent encode", "decode url"],
   },
   {
@@ -181,12 +187,12 @@ export const TOOLS: ToolMeta[] = [
     name: "Image Compressor",
     description: "Compress images (JPEG/PNG/WebP) in the browser. Reduce file size before upload.",
     category: "image",
-    metaTitle: "Free Image Compressor – Reduce Image File Size Online | Snapptools",
+    metaTitle: "Free Image Compressor – Compress JPG, PNG & WebP Online | Snapptools",
     metaDescription:
-      "Compress JPEG, PNG, and WebP images directly in your browser. Reduce file size before uploading — free, fast, and private. No signup required.",
-    h1Title: "Free Image Compressor Online",
+      "Compress JPG, PNG, and WebP images online for free. Reduce file size before uploading to websites, email, or social media — instant results, no signup, runs in your browser.",
+    h1Title: "Free Image Compressor — Reduce Image Size Online",
     introLead:
-      "Shrink JPEG, PNG, or WebP files before you upload. Processing stays on your device—no signup, quick downloads.",
+      "Compress JPEG, PNG, and WebP images directly in your browser. Drag in your image, adjust the quality slider, and download a smaller file in seconds — no upload to our servers, no signup required.",
     keywords: [
       "compress image without losing quality",
       "image compressor fast online",
@@ -283,7 +289,10 @@ export const TOOLS: ToolMeta[] = [
     category: "pdf",
     metaTitle: "Merge PDF Files Free Online – Combine PDFs Instantly | Snapptools",
     metaDescription:
-      "Combine multiple PDF files into one online for free. Reorder pages and download your merged PDF instantly. No signup, no file size limits.",
+      "Combine multiple PDF files into one online for free. Upload your PDFs, arrange the order, and download your merged file instantly. No signup, no file size limit, runs in your browser.",
+    h1Title: "Free PDF Merger — Combine PDF Files Online",
+    introLead:
+      "Upload two or more PDF files, drag to arrange the order you want, and download a single merged PDF in seconds. No account needed, no file size limit, and your documents never leave your browser.",
     keywords: ["merge pdf", "combine pdf", "join pdf"],
   },
   {

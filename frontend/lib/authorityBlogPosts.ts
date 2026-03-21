@@ -1,9 +1,11 @@
 import type { BlogArticle } from "./blogTypes";
+import { SNAPPTOOLS_CONTENT_BLOG_POSTS } from "./snapptoolsContentBlogPosts";
 
 /**
  * Authority / long-tail SEO posts with internal links to tools.
  */
 export const AUTHORITY_BLOG_POSTS: BlogArticle[] = [
+  ...SNAPPTOOLS_CONTENT_BLOG_POSTS,
   {
     slug: "best-free-qr-code-generators-2026",
     title: "Best Free QR Code Generators in 2026 (No Signup, Honest Picks)",

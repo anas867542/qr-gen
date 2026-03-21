@@ -35,10 +35,10 @@ export default function FaqPage() {
     mainEntity: [
       {
         "@type": "Question",
-        name: "Are these tools really free?",
+        name: "Are Snapptools tools really free?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Yes. All tools are free to use with no signup. We may show ads to keep the site running.",
+          text: "Yes. All tools on Snapptools are completely free to use with no signup required. We may show ads to keep the site running.",
         },
       },
       {
@@ -46,15 +46,31 @@ export default function FaqPage() {
         name: "Is my data sent to your servers?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Most tools run entirely in your browser. Your inputs (text, files) are not uploaded to our servers unless a tool clearly says otherwise.",
+          text: "Most tools run entirely in your browser. Your inputs — text, files, images — are not uploaded to our servers. A small number of tools may use an optional API, which is clearly stated on those pages.",
         },
       },
       {
         "@type": "Question",
-        name: "Do I need to create an account?",
+        name: "Do I need to create an account to use Snapptools?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "No. You can use every tool without registering or logging in.",
+          text: "No. Every tool on Snapptools is available without registering or logging in.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Can I use these tools on my phone?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Yes. Snapptools works on phones and tablets. Most tools work well on mobile, though some tools involving file uploads work best on desktop.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "How does Snapptools make money?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Snapptools may show ads (such as Google AdSense) and may include affiliate links to products we recommend. Using the tools remains free.",
         },
       },
     ],

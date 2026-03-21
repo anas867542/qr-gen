@@ -230,6 +230,128 @@ body {
   text-decoration: none;
 }
 
+.hero-intro-single {
+  max-width: 38rem;
+  margin: 0.75rem auto 0;
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.65;
+  text-align: center;
+}
+
+/* Homepage: what tools are included (snapptools-content) */
+.home-tools-included {
+  position: relative;
+  z-index: 1;
+  padding: 2.25rem 0;
+  border-top: 1px solid var(--border);
+  background: rgba(18, 18, 24, 0.25);
+}
+
+.home-tools-included-inner {
+  max-width: 40rem;
+}
+
+.home-tools-included-title {
+  margin: 0 0 0.75rem;
+  font-size: 1.35rem;
+  font-weight: 800;
+}
+
+.home-tools-included-lead {
+  margin: 0 0 0.75rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.home-tools-included-list {
+  margin: 0 0 1rem;
+  padding-left: 1.25rem;
+  color: var(--muted);
+  line-height: 1.65;
+  font-size: 0.95rem;
+}
+
+.home-tools-included-list li {
+  margin-bottom: 0.45rem;
+}
+
+.home-tools-included-outro {
+  margin: 0;
+  font-size: 0.92rem;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.home-tools-included-link {
+  color: var(--accent, #a78bfa);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* Most popular tools row */
+.home-popular-tools {
+  padding: 2rem 0 2.5rem;
+  border-top: 1px solid var(--border);
+}
+
+.home-popular-title {
+  margin: 0 0 1rem;
+  font-size: 1.25rem;
+  font-weight: 800;
+}
+
+.home-popular-list {
+  margin: 0;
+  padding-left: 1.2rem;
+  max-width: 42rem;
+  line-height: 1.75;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.home-popular-list a {
+  color: var(--accent, #a78bfa);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* Why Snapptools */
+.home-why-snapptools {
+  padding: 2.5rem 0;
+  border-top: 1px solid var(--border);
+  background: rgba(18, 18, 24, 0.4);
+}
+
+.home-why-inner {
+  max-width: 40rem;
+}
+
+.home-why-title {
+  margin: 0 0 1.25rem;
+  font-size: 1.35rem;
+  font-weight: 800;
+}
+
+.home-why-block {
+  margin-bottom: 1.35rem;
+}
+
+.home-why-subtitle {
+  margin: 0 0 0.4rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.home-why-text {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.93rem;
+  line-height: 1.65;
+}
+
 .main-section {
   position: relative;
   z-index: 1;
