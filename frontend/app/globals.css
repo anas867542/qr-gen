@@ -198,6 +198,26 @@ body {
   line-height: 1.6;
 }
 
+.hero-internal-links {
+  max-width: 36rem;
+  margin: 0.65rem auto 0;
+  color: var(--muted);
+  font-size: 0.88rem;
+  line-height: 1.55;
+  text-align: center;
+}
+
+.hero-inline-link {
+  color: var(--accent, #a78bfa);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.hero-inline-link:hover {
+  color: #c4b5fd;
+}
+
 .hero-cta {
   display: flex;
   flex-wrap: wrap;
@@ -1077,9 +1097,41 @@ body {
 
 .tool-guide-heading {
   margin: 0 0 0.5rem;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.tool-guide-feature-list {
+  margin: 0 0 0.5rem;
+  padding-left: 1.25rem;
+  color: var(--muted);
+}
+
+.tool-guide-feature-list li {
+  margin-bottom: 0.4rem;
+}
+
+.tool-guide-faq {
+  margin-top: 0.25rem;
+}
+
+.tool-faq-item {
+  margin-bottom: 1rem;
+}
+
+.tool-faq-question {
+  margin: 0 0 0.35rem;
   font-size: 1rem;
   font-weight: 600;
   color: var(--text);
+}
+
+.tool-faq-answer {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.65;
 }
 
 .tool-guide-para {

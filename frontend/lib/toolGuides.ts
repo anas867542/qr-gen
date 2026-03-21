@@ -10,6 +10,10 @@ export interface ToolGuideSection {
 export interface ToolGuide {
   slug: string;
   sections: ToolGuideSection[];
+  /** Short bullet list shown under an H2 "Features" (SEO + scanability). */
+  features?: string[];
+  /** FAQ items for H2 "Frequently asked questions" + optional FAQ schema. */
+  faqs?: { question: string; answer: string }[];
 }
 
 export const TOOL_GUIDES: ToolGuide[] = [
@@ -17,29 +21,62 @@ export const TOOL_GUIDES: ToolGuide[] = [
     slug: "qr-code-generator",
     sections: [
       {
-        heading: "What is this tool?",
+        heading: "What is a QR code generator?",
         paragraphs: [
-          "This free QR code generator lets you create QR codes for websites (URLs), plain text, or Wi‑Fi network details. You can customize the size and colors, then download the result as a PNG image. No account or signup is required; everything runs in your browser.",
-          "QR codes are two-dimensional barcodes that smartphones can scan to open a link, display text, or connect to Wi‑Fi. They are used in marketing, menus, events, and product packaging.",
+          "A QR code generator is an online tool that turns a URL, short text, or Wi‑Fi details into a scannable square barcode. Our free QR code generator runs entirely in your browser: you type what you want to encode, customize appearance, and download a PNG you can print or share digitally. There is no signup and no server upload of your content—ideal when you need a QR code for a website link, WhatsApp chat link, menu, flyer, or business card.",
+          "QR (Quick Response) codes store data in a grid of black and white modules. Modern phone cameras decode them in a second, which is why they are everywhere in retail, hospitality, events, and personal sharing. Whether you need an instant QR code generator for a one-off campaign or a repeatable workflow for your business, the same rules apply: use a high-contrast design, test the scan on real devices, and keep the encoded content short when possible for easier scanning.",
         ],
       },
       {
-        heading: "How to use it",
+        heading: "How to use this QR code generator",
         paragraphs: [
-          "Choose the type: URL, Text, or Wi‑Fi. For URL, enter the website address (we add https:// if needed). For Text, enter any short message. For Wi‑Fi, enter the network name (SSID), password, and security type. Adjust the size with the slider and pick foreground and background colors if you like. Click \"Generate QR code\" and the preview updates. Use \"Download PNG\" to save the image.",
+          "Step 1: Choose the type—URL for a website or landing page (including links you might share via WhatsApp or social apps), Text for a short message, or Wi‑Fi so guests can join your network without typing a password.",
+          "Step 2: Enter your content. For URLs we normalize https:// when needed. For Wi‑Fi, add SSID, password, and security type (e.g. WPA).",
+          "Step 3: Adjust the size slider so the code will be sharp when printed or shown on a screen.",
+          "Step 4: Optional: set foreground and background colors to match your brand—keep enough contrast for reliable scans.",
+          "Step 5: Click generate, test with your phone, then download the PNG for print or digital use.",
         ],
       },
       {
-        heading: "Benefits",
+        heading: "Benefits for business and personal use",
         paragraphs: [
-          "Free and private: no data is sent to any server. Instant generation in the browser. Custom colors help match your brand. Supports the most common use cases: links, text, and Wi‑Fi.",
+          "You can create a QR code without signup, which removes friction when you are in a hurry. For business, QR codes bridge offline materials and online actions: menus, coupons, feedback forms, and product registration. For personal use, they are handy for sharing Wi‑Fi, a portfolio link, or a donation page. Because processing is local, you can experiment with colors and size until the result looks right.",
         ],
       },
       {
-        heading: "Use cases",
+        heading: "Common use cases",
         paragraphs: [
-          "Marketing: put a QR code on flyers or posters linking to your website or landing page. Restaurants: create a QR code that opens your digital menu. Events: share Wi‑Fi with guests via a printed QR code. Business cards: link to your portfolio or contact page. Product packaging: point customers to manuals, registration, or support.",
+          "Marketing and print: posters, flyers, packaging, and table tents linking to offers or sign-up pages. Hospitality: digital menus and review links. Events: schedules, maps, or Wi‑Fi for attendees. Professional: business cards and email signatures pointing to your site or booking page. If you need a free QR code generator for link sharing or Wi‑Fi, this tool covers the most popular scenarios in one place.",
         ],
+      },
+    ],
+    features: [
+      "Free QR code generator online—no account required",
+      "URL, plain text, and Wi‑Fi QR types",
+      "Custom size and colors; instant PNG download",
+      "Runs in your browser (privacy-friendly)",
+      "Great for business cards, menus, and campaigns",
+    ],
+    faqs: [
+      {
+        question: "Is this QR code generator really free?",
+        answer:
+          "Yes. You can generate and download QR codes at no cost. We do not require signup to use the core generator.",
+      },
+      {
+        question: "Can I use this as a QR code generator for WhatsApp or a website link?",
+        answer:
+          "Yes. For WhatsApp, paste the full wa.me or WhatsApp link into the URL field. For any website, paste the page URL—we’ll help normalize it so phones open the right destination.",
+      },
+      {
+        question: "Do you store my URLs or Wi‑Fi passwords?",
+        answer:
+          "No. Generation happens in your browser; we do not upload your content to our servers for this tool.",
+      },
+      {
+        question: "What format is the download?",
+        answer:
+          "You get a PNG image suitable for web, email, and most print workflows. Test the scan after resizing for very small print.",
       },
     ],
   },
@@ -47,29 +84,61 @@ export const TOOL_GUIDES: ToolGuide[] = [
     slug: "password-generator",
     sections: [
       {
-        heading: "What is this tool?",
+        heading: "What is a strong password generator?",
         paragraphs: [
-          "The password generator creates strong, random passwords for your accounts. You choose the length and which character sets to include (uppercase, lowercase, numbers, symbols). The tool runs in your browser so nothing is sent over the internet.",
-          "Strong passwords are long, random, and use a mix of character types. This makes them harder to guess or crack than simple words or dates.",
+          "A strong password generator creates random passwords that are difficult to guess or brute-force. Our secure password generator runs locally in your browser: you pick length and character types (letters, numbers, symbols), then copy the result into a password manager or signup form. Unlike memorable phrases, random strings dramatically reduce the risk of dictionary attacks and credential stuffing if one site suffers a breach.",
+          "Good online habits combine length (often 16+ characters), randomness, and uniqueness per account. This random password generator free tool helps you meet strict rules—such as “must include a symbol”—without inventing patterns that attackers can predict.",
         ],
       },
       {
-        heading: "How to use it",
+        heading: "How to use this password generator",
         paragraphs: [
-          "Set the desired length (e.g. 16 or 20 characters). Check the boxes for the character types you want: uppercase letters, lowercase letters, numbers, and symbols. Click generate to get a new password. Copy it and store it in a password manager or use it when creating an account. Generate again whenever you need a new password.",
+          "Step 1: Set a length that your service allows; 16–20 characters is a strong default for most accounts.",
+          "Step 2: Enable character sets: uppercase, lowercase, numbers, and symbols if the site allows them.",
+          "Step 3: Click generate to produce a new password. If a site rejects certain symbols, toggle options and regenerate.",
+          "Step 4: Copy the password once and save it in a trusted password manager—avoid reusing it across sites.",
+          "Step 5: Generate a new password whenever you rotate credentials or create a new login.",
         ],
       },
       {
         heading: "Benefits",
         paragraphs: [
-          "No signup and no data leaves your device. You can create as many passwords as you need. Customizable length and character sets help meet different site requirements (e.g. \"must include a symbol\").",
+          "You get passwords with symbols and mixed character types in one click, which saves time compared to inventing them manually. Because nothing is transmitted to our servers for generation, you retain control of sensitive data. Use it whenever you need a secure password generator tool for work, school, or personal accounts.",
         ],
       },
       {
-        heading: "Use cases",
+        heading: "When to use it",
         paragraphs: [
-          "Creating new accounts for email, social media, or services. Replacing weak or reused passwords. Generating temporary or one-time passwords. Meeting password policies that require symbols and numbers.",
+          "Use it for new email, banking, cloud, and shopping accounts; for replacing weak passwords; and for shared or team logins where policy requires complexity. Pair it with a password manager so you do not have to memorize dozens of random strings.",
         ],
+      },
+    ],
+    features: [
+      "Strong password generator online—custom length",
+      "Include or exclude uppercase, lowercase, numbers, symbols",
+      "Generate password with symbols online in one click",
+      "Runs locally in your browser",
+      "Unlimited generations; no signup",
+    ],
+    faqs: [
+      {
+        question: "Is this random password generator free?",
+        answer: "Yes. You can generate as many passwords as you need at no charge.",
+      },
+      {
+        question: "Do you save my passwords?",
+        answer:
+          "No. Generation happens in your browser; we do not receive or store the passwords you create.",
+      },
+      {
+        question: "What length should I use?",
+        answer:
+          "Longer is generally better. Many experts suggest at least 12–16 characters for important accounts; use the maximum allowed when possible.",
+      },
+      {
+        question: "Should I memorize every password?",
+        answer:
+          "It is safer to use a password manager and unique passwords per site than to reuse easy-to-remember passwords.",
       },
     ],
   },
@@ -77,29 +146,61 @@ export const TOOL_GUIDES: ToolGuide[] = [
     slug: "json-formatter",
     sections: [
       {
-        heading: "What is this tool?",
+        heading: "What is a JSON formatter?",
         paragraphs: [
-          "The JSON formatter and validator helps developers and anyone working with JSON data. Paste minified or messy JSON and the tool formats it with indentation and line breaks so it’s easier to read. It also checks for syntax errors and reports where the problem is.",
-          "JSON (JavaScript Object Notation) is used in APIs, config files, and web apps. Valid, well-formatted JSON is easier to debug and maintain.",
+          "A JSON formatter (often called a JSON beautifier and validator) takes compact or messy JSON text and pretty-prints it with indentation so objects and arrays are easy to scan. Our JSON formatter online free tool also checks syntax: missing commas, stray quotes, or unbalanced brackets show up as validation errors so you can fix them quickly. JSON is the lingua franca of web APIs, mobile apps, and many config files—so a fast JSON viewer free experience saves hours when debugging payloads or reading third-party responses.",
+          "Whether you need json pretty print online for a Slack snippet or format json online tool output before committing to Git, the goal is the same: readable structure plus confidence that the document is valid JSON.",
         ],
       },
       {
-        heading: "How to use it",
+        heading: "How to use this JSON tool",
         paragraphs: [
-          "Paste your JSON string into the input area. The tool will format it and highlight any syntax errors (e.g. missing commas, extra brackets). Fix the reported issues and format again until the output is valid. You can copy the formatted result for use in your project.",
+          "Step 1: Copy your minified API response, config blob, or file contents into the input area.",
+          "Step 2: Run format / validate. The tool indents nested objects and arrays for a clear JSON tree view.",
+          "Step 3: Read any error message and line hint; common issues include trailing commas (not allowed in strict JSON), single quotes instead of double quotes, or unescaped characters.",
+          "Step 4: Fix the source and validate again until no errors appear.",
+          "Step 5: Copy the formatted JSON for documentation, tickets, or your codebase.",
         ],
       },
       {
         heading: "Benefits",
         paragraphs: [
-          "Runs in the browser; your JSON is not uploaded to a server. Instant formatting and validation. Clear error messages help you fix invalid JSON quickly.",
+          "You get instant feedback without installing desktop software. Because parsing runs in the browser, sensitive payloads are not uploaded to our servers as part of formatting—ideal for internal API samples. Developers, QA, and technical writers all benefit from a single json beautifier and validator workflow.",
         ],
       },
       {
-        heading: "Use cases",
+        heading: "Typical use cases",
         paragraphs: [
-          "Formatting API responses for readability. Validating JSON before sending to a server. Debugging config files or data exports. Learning JSON structure by seeing properly indented output.",
+          "Debugging REST and GraphQL responses, cleaning up logs, preparing examples for documentation, validating config before deployment, and teaching JSON structure to students. If you searched for json formatter online free or json viewer free, this page combines readability and validation in one place.",
         ],
+      },
+    ],
+    features: [
+      "Format JSON online with indentation (pretty print)",
+      "Validate JSON and surface syntax errors",
+      "Works in the browser—no signup",
+      "Copy-paste friendly for API work",
+      "Helpful for configs, logs, and tutorials",
+    ],
+    faqs: [
+      {
+        question: "Is this JSON formatter free?",
+        answer: "Yes. Format and validate as often as you like at no cost.",
+      },
+      {
+        question: "Do you upload my JSON to a server?",
+        answer:
+          "Formatting and validation run locally in your browser; your pasted data is not sent to our servers for processing.",
+      },
+      {
+        question: "Why does valid JavaScript object literal fail?",
+        answer:
+          "Strict JSON requires double quotes around keys and strings and does not allow trailing commas or comments. Convert those to valid JSON first.",
+      },
+      {
+        question: "Can I use this for large files?",
+        answer:
+          "Very large pastes may slow your browser. For huge files, consider streaming tools or local editors—but for typical API payloads this tool works well.",
       },
     ],
   },
@@ -137,29 +238,61 @@ export const TOOL_GUIDES: ToolGuide[] = [
     slug: "image-compressor",
     sections: [
       {
-        heading: "What is this tool?",
+        heading: "What is an image compressor?",
         paragraphs: [
-          "The image compressor reduces the file size of JPEG, PNG, or WebP images so they load faster on websites or use less storage. You can adjust quality or dimensions; the tool runs in your browser and does not upload images to a server.",
-          "Smaller images mean faster page loads and lower bandwidth, which improves user experience and can help with SEO.",
+          "An image compressor reduces file size by adjusting encoding quality and, in some workflows, dimensions—so pages load faster and attachments stay under limits. Our image compressor fast online experience runs locally: you choose images, set how aggressive compression should be, and download lighter files. Many people search for compress image without losing quality; in practice you trade a small amount of detail for much smaller bytes, which is usually invisible on the web when settings are sensible.",
+          "Smaller images improve Core Web Vitals and user experience, which supports SEO and conversion. Whether you need compress image online free for a portfolio or product photos, the goal is predictable file weight without re-shooting assets.",
         ],
       },
       {
-        heading: "How to use it",
+        heading: "How to use this compressor",
         paragraphs: [
-          "Select one or more images from your device. Choose quality or size options if the tool offers them. Run the compression and compare the result. Download the compressed image(s) when you’re satisfied.",
+          "Step 1: Add one or more JPEG, PNG, or WebP files from your device.",
+          "Step 2: Choose quality or preset options if available—start moderate and tighten if you need smaller files.",
+          "Step 3: Run compression and compare before/after size (and visually zoom in if quality matters).",
+          "Step 4: Download the optimized images and upload them to your site, marketplace, or email.",
+          "Step 5: Keep originals archived separately if you might need maximum quality later.",
         ],
       },
       {
         heading: "Benefits",
         paragraphs: [
-          "Privacy-friendly: processing happens locally. No account required. Useful for photos, avatars, and graphics before uploading to a site or app.",
+          "You avoid slow uploads on mobile networks, reduce storage costs, and meet platform size caps. Because processing stays in the browser, product or client images are not sent to us for compression—useful for privacy. This is a practical free image compression option for bloggers, sellers, and developers alike.",
         ],
       },
       {
-        heading: "Use cases",
+        heading: "Common use cases",
         paragraphs: [
-          "Preparing images for a website or blog. Reducing attachment size for email. Freeing up space on a device. Optimizing images for social media or listings.",
+          "Blog and landing page hero images, ecommerce thumbnails, email newsletters, chat attachments, and social posts. If you searched for image compressor fast online or compress image without losing quality, start with a balanced quality setting and iterate.",
         ],
+      },
+    ],
+    features: [
+      "Compress image online free in the browser",
+      "Supports common formats (JPEG, PNG, WebP)",
+      "Adjust quality to balance size and clarity",
+      "No signup; quick download",
+      "Helps pages load faster (SEO-friendly)",
+    ],
+    faqs: [
+      {
+        question: "Is compression really free?",
+        answer: "Yes. Compress images without a paid plan or account.",
+      },
+      {
+        question: "Do you upload my photos?",
+        answer:
+          "Compression runs locally in your browser; your files are not sent to our servers for processing.",
+      },
+      {
+        question: "Will my image look worse?",
+        answer:
+          "Strong compression can add artifacts. Use a moderate setting for photos you care about, and always preview before replacing originals.",
+      },
+      {
+        question: "Is PNG or JPEG better for photos?",
+        answer:
+          "JPEG is usually smaller for photos; PNG is better for graphics with sharp edges or transparency. Pick the format that matches your subject.",
       },
     ],
   },
@@ -208,16 +341,61 @@ export const TOOL_GUIDES: ToolGuide[] = [
     slug: "word-counter",
     sections: [
       {
-        heading: "What is this tool?",
+        heading: "What is a word counter?",
         paragraphs: [
-          "The word counter counts words, characters, sentences, and paragraphs in your text. It updates as you type or paste, so you can stay within limits for essays, social posts, or forms. All counting is done in your browser; nothing is sent to a server.",
+          "A word counter is an online tool that measures how many words, characters, sentences, and paragraphs are in a piece of text. Students use a word counter for essay writing to stay within class limits; marketers use online word counter with character count fields for titles and meta descriptions; authors track chapters and scenes. Our free word counter online updates as you type or paste, so you always see current totals without uploading your document.",
+          "Unlike desktop apps that require installation, a word count tool without login removes friction: open the page, paste your draft, and adjust until you hit the target. You also get character counts with and without spaces—useful when a form counts spaces differently or when you are writing tweets, SMS, or ad copy.",
         ],
       },
       {
-        heading: "How to use it and use cases",
+        heading: "How to use this word counter",
         paragraphs: [
-          "Paste or type your text in the box. The tool shows word count, character count (with and without spaces), and often sentence and paragraph counts. Use it for essays, tweets, meta descriptions, or any place with a character or word limit.",
+          "Step 1: Paste your essay, article, or notes into the text area—or type directly if you prefer.",
+          "Step 2: Read the live word count and character count at a glance.",
+          "Step 3: Check sentence and paragraph totals if your brief asks for structure (e.g. “five paragraphs”).",
+          "Step 4: Trim or expand your draft until you meet the assignment or platform limit.",
+          "Step 5: Copy your final text back to Word, Google Docs, or your CMS—our tool does not store your work.",
         ],
+      },
+      {
+        heading: "Benefits",
+        paragraphs: [
+          "Fast word counter tool feedback helps you avoid submitting an essay that is fifty words over the limit or an abstract that is too short. Because it is a word counter copy paste online workflow, you can pull text from email, PDFs, or notes instantly. Teachers, bloggers, translators, and students all save time compared to manual counting.",
+        ],
+      },
+      {
+        heading: "Who uses this tool?",
+        paragraphs: [
+          "Students and teachers for papers and abstracts; content creators for captions and scripts; job seekers for cover letters with strict length; SEO writers for meta titles and descriptions; social media managers for platform limits. If you need a word counter for students or professionals alike, the same simple interface applies.",
+        ],
+      },
+    ],
+    features: [
+      "Free word counter online—no registration",
+      "Words, characters (with/without spaces), sentences, paragraphs",
+      "Live updates as you edit",
+      "Word counter for paragraphs and long-form text",
+      "Private: processing in your browser",
+    ],
+    faqs: [
+      {
+        question: "Is this word counter free?",
+        answer: "Yes. Use it as much as you want without payment or signup.",
+      },
+      {
+        question: "Does it save my essay or document?",
+        answer:
+          "No. Counting happens in your browser; we do not store your pasted text on our servers.",
+      },
+      {
+        question: "How accurate is the word count?",
+        answer:
+          "We split on whitespace and punctuation rules typical for English-like text. For unusual languages or special formatting, compare once with your editor if your grader is strict.",
+      },
+      {
+        question: "Can I use it for college essays?",
+        answer:
+          "Yes. It is a popular word counter for essay writing and abstracts—paste your draft and adjust until you meet the requirement.",
       },
     ],
   },
@@ -378,16 +556,62 @@ export const TOOL_GUIDES: ToolGuide[] = [
     slug: "image-resizer",
     sections: [
       {
-        heading: "What is this tool?",
+        heading: "What is an image resizer?",
         paragraphs: [
-          "The image resizer changes the dimensions of an image by pixels or percentage. You can keep the aspect ratio or set exact width and height. Resizing runs in your browser.",
+          "An image resizer changes width and height so your photo fits a layout, platform, or file-size budget. Our image resizer online free tool lets you set exact pixels or a percentage scale, often with an aspect ratio lock so subjects are not stretched. Resize image for Instagram posts, stories, shop thumbnails, or email signatures without installing software.",
+          "Downscaling usually improves sharpness per pixel on screens; upscaling can soften detail, so start from the largest source file you have. For social networks, each channel has informal “safe” dimensions—use this tool to hit your target width and height quickly.",
         ],
       },
       {
-        heading: "Use cases",
+        heading: "How to use this resizer",
         paragraphs: [
-          "Preparing images for web or email size limits. Creating thumbnails. Resizing screenshots or photos for profiles and listings.",
+          "Step 1: Upload your image from your device.",
+          "Step 2: Enter target width and height in pixels, or choose a percentage resize.",
+          "Step 3: Toggle aspect ratio lock if you want to avoid distortion.",
+          "Step 4: Preview the result, then download the resized file.",
+          "Step 5: Upload to your app or CMS; repeat for batches if you have multiple assets.",
         ],
+      },
+      {
+        heading: "Benefits",
+        paragraphs: [
+          "You meet strict dimension requirements for ads, marketplaces, and social feeds. Local processing keeps drafts private. Combined with our compressor, you can both resize image for Instagram and shrink bytes for faster loads.",
+        ],
+      },
+      {
+        heading: "Typical use cases",
+        paragraphs: [
+          "Profile photos, product shots, blog images, presentation slides, and screenshots. If you need photo resizer workflows without Photoshop, this page is a fast alternative.",
+        ],
+      },
+    ],
+    features: [
+      "Image resizer online free—pixels or percent",
+      "Optional aspect ratio lock",
+      "Browser-based; no signup",
+      "Great to resize image for Instagram and web",
+      "Pairs well with compression for lighter files",
+    ],
+    faqs: [
+      {
+        question: "Will resizing reduce quality?",
+        answer:
+          "Making an image smaller discards pixels; that is usually fine for web. Enlarging an image cannot add real detail and may look soft.",
+      },
+      {
+        question: "Can I keep proportions?",
+        answer:
+          "Yes. Use the aspect ratio lock so width and height stay proportional when you change one dimension.",
+      },
+      {
+        question: "Do you store my uploads?",
+        answer:
+          "Resizing happens in your browser; we do not upload your images to our servers for this tool.",
+      },
+      {
+        question: "What about Instagram sizes?",
+        answer:
+          "Use the pixel fields to match your template (feed, story, or reel). Always verify in-app crop preview before posting.",
       },
     ],
   },

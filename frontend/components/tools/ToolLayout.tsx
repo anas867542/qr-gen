@@ -13,9 +13,33 @@ export function ToolLayout({ tool, children }: ToolLayoutProps) {
   const related = getRelatedTools(tool);
   const categoryLabel = TOOL_CATEGORIES[tool.category];
   const guide = getToolGuide(tool.slug);
+  const h1 = tool.h1Title ?? tool.name;
+  const primaryIntro = tool.introLead ?? tool.description;
+
+  const faqJsonLd =
+    guide?.faqs && guide.faqs.length > 0
+      ? {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: guide.faqs.map((f) => ({
+            "@type": "Question",
+            name: f.question,
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: f.answer,
+            },
+          })),
+        }
+      : null;
 
   return (
     <div className="tool-page">
+      {faqJsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+        />
+      )}
       <nav className="tool-breadcrumb wrap" aria-label="Breadcrumb">
         <Link href="/" className="tool-breadcrumb-link">
           Home
@@ -29,32 +53,55 @@ export function ToolLayout({ tool, children }: ToolLayoutProps) {
       </nav>
       <div className="wrap">
         <header className="tool-header">
-          <h1 className="tool-title">{tool.name}</h1>
-          <p className="tool-description">{tool.description}</p>
-          {/* Semantic SEO: short topic context so the page covers the theme better */}
+          <h1 className="tool-title">{h1}</h1>
+          <p className="tool-description">{primaryIntro}</p>
           <p className="tool-semantic-lead">
-            {categoryLabel}: use this free online {tool.name.toLowerCase()} in your browser. No signup, no data sent to our servers—instant results.
+            {categoryLabel}: free online {tool.name.toLowerCase()} in your browser. No signup required—your data stays on your device.
           </p>
         </header>
         <div className="tool-content">{children}</div>
 
-        {/* SEO content: what it does, how to use, benefits, use cases (300–800 words per tool) */}
+        {/* SEO: H2 sections, features, FAQ (target 500–1000 words on priority tools) */}
         {guide && (
-          <section className="tool-guide" aria-label="Guide">
-            <h2 className="tool-guide-title">What this tool does &amp; how to use it</h2>
+          <article className="tool-guide" aria-label="Guide">
             {guide.sections.map((section, i) => (
-              <div key={i} className="tool-guide-section">
-                <h3 className="tool-guide-heading">{section.heading}</h3>
+              <section key={i} className="tool-guide-section">
+                <h2 className="tool-guide-heading">{section.heading}</h2>
                 {section.paragraphs.map((p, j) => (
                   <p key={j} className="tool-guide-para">
                     {p}
                   </p>
                 ))}
-              </div>
+              </section>
             ))}
+            {guide.features && guide.features.length > 0 && (
+              <section className="tool-guide-section" aria-labelledby={`features-${tool.slug}`}>
+                <h2 id={`features-${tool.slug}`} className="tool-guide-heading">
+                  Features
+                </h2>
+                <ul className="tool-guide-feature-list">
+                  {guide.features.map((item, i) => (
+                    <li key={i}>{item}</li>
+                  ))}
+                </ul>
+              </section>
+            )}
+            {guide.faqs && guide.faqs.length > 0 && (
+              <section className="tool-guide-section tool-guide-faq" aria-labelledby={`faq-${tool.slug}`}>
+                <h2 id={`faq-${tool.slug}`} className="tool-guide-heading">
+                  Frequently asked questions
+                </h2>
+                {guide.faqs.map((f, i) => (
+                  <div key={i} className="tool-faq-item">
+                    <h3 className="tool-faq-question">{f.question}</h3>
+                    <p className="tool-faq-answer">{f.answer}</p>
+                  </div>
+                ))}
+              </section>
+            )}
             {(TOOL_TO_BLOG_SLUGS[tool.slug]?.length ?? 0) > 0 && (
-              <div className="tool-guide-related-blog">
-                <h3 className="tool-guide-heading">Related guides</h3>
+              <section className="tool-guide-related-blog">
+                <h2 className="tool-guide-heading">Related guides</h2>
                 <ul className="tool-guide-blog-list">
                   {TOOL_TO_BLOG_SLUGS[tool.slug]
                     .map((slug) => getArticleBySlug(slug))
@@ -67,14 +114,14 @@ export function ToolLayout({ tool, children }: ToolLayoutProps) {
                       </li>
                     ))}
                 </ul>
-              </div>
+              </section>
             )}
             <p className="tool-guide-more">
               <Link href="/blog" className="tool-breadcrumb-link">
                 More guides and articles →
               </Link>
             </p>
-          </section>
+          </article>
         )}
 
         {/* Clustering SEO: internal links to related tools (same topic cluster) */}

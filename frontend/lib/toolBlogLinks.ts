@@ -20,4 +20,5 @@ export const TOOL_TO_BLOG_SLUGS: Record<string, string[]> = {
   "png-to-jpg": ["image-compression-guide"],
   "jpg-to-webp": ["image-compression-guide"],
   "base64-encoder": ["base64-encoder-guide"],
+  "word-counter": ["best-free-word-counter-tools-2026", "how-to-count-words-in-an-essay"],
 };

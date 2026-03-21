@@ -1,17 +1,27 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { CookieConsent } from "@/components/layout/CookieConsent";
 import { AdSlot } from "@/components/layout/AdSlot";
-import { SITE_NAME, SITE_TAGLINE } from "@/lib/siteConfig";
+import { SITE_NAME, SITE_TAGLINE, getBaseUrl } from "@/lib/siteConfig";
+
+const siteUrl = getBaseUrl();
+const iconUrl = `${siteUrl}/icon.svg`;
+
+export const viewport: Viewport = {
+  themeColor: "#0f0f12",
+};
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: `${SITE_NAME} – ${SITE_TAGLINE}`,
   description:
     "Snapptools offers free QR code generators, password generator, PDF tools, image tools and more. Create QR codes instantly online. No signup.",
   keywords: [
     "free qr code generator",
+    "free word counter online",
+    "json formatter online free",
     "snapptools",
     "online tools",
     "password generator",
@@ -20,12 +30,18 @@ export const metadata: Metadata = {
     "pdf tools",
     "image compressor",
   ],
+  icons: {
+    icon: [{ url: "/icon.svg", type: "image/svg+xml" }],
+    shortcut: "/icon.svg",
+    apple: "/icon.svg",
+  },
   openGraph: {
     title: `${SITE_NAME} – ${SITE_TAGLINE}`,
     description: "Free QR code generator, password generator, PDF and image tools. Create QR codes instantly online.",
     type: "website",
+    url: siteUrl,
+    siteName: SITE_NAME,
   },
-  themeColor: "#0f0f12",
 };
 
 export default function RootLayout({
@@ -36,6 +52,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <link rel="icon" href="/icon.svg" type="image/svg+xml" sizes="any" />
+        <link rel="alternate icon" href="/icon.svg" type="image/svg+xml" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
         <link
@@ -49,9 +67,24 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "Organization",
               name: SITE_NAME,
-              url: process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") || "https://snapptools.net",
+              url: siteUrl,
+              logo: iconUrl,
               description:
                 "Snapptools: free QR code generator, password generator, JSON formatter, image and PDF tools. No signup.",
+            }),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              name: SITE_NAME,
+              url: siteUrl,
+              description:
+                "Free online tools: QR codes, word counter, JSON formatter, password generator, PDF and image utilities. No signup.",
+              publisher: { "@type": "Organization", name: SITE_NAME, url: siteUrl },
             }),
           }}
         />

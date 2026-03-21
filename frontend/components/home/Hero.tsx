@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { SITE_NAME } from "@/lib/siteConfig";
 
 export function Hero() {
@@ -20,6 +21,24 @@ export function Hero() {
         </p>
         <p className="hero-seo">
           Use our <strong>QR code generator</strong> for links and Wi‑Fi, our <strong>developer utilities</strong> for Base64 and URL encoding, and our <strong>PDF and image tools</strong> for merge, split, compress, and convert. Browse the tool list below or read the blog for step-by-step guides.
+        </p>
+        <p className="hero-internal-links" aria-label="Popular tools">
+          Popular:{" "}
+          <Link href="/tools/word-counter" className="hero-inline-link">
+            Word counter
+          </Link>
+          {" · "}
+          <Link href="/tools/qr-code-generator" className="hero-inline-link">
+            QR code generator
+          </Link>
+          {" · "}
+          <Link href="/tools/json-formatter" className="hero-inline-link">
+            JSON formatter
+          </Link>
+          {" · "}
+          <Link href="/tools/password-generator" className="hero-inline-link">
+            Password generator
+          </Link>
         </p>
         <div className="hero-cta">
           <a href="#tools" className="btn btn-primary">

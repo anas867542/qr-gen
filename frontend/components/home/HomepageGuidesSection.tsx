@@ -4,7 +4,9 @@ import { BLOG_ARTICLES } from "@/lib/blogArticles";
 const FEATURED_COUNT = 8;
 
 export function HomepageGuidesSection() {
-  const featured = BLOG_ARTICLES.slice(0, FEATURED_COUNT);
+  const featured = [...BLOG_ARTICLES]
+    .sort((a, b) => (a.date < b.date ? 1 : a.date > b.date ? -1 : 0))
+    .slice(0, FEATURED_COUNT);
 
   return (
     <section className="home-guides" aria-label="Guides and articles">

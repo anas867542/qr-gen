@@ -11,6 +11,14 @@ export interface ToolMeta {
   description: string;
   category: ToolCategory;
   keywords?: string[];
+  /** Overrides `<title>` and primary SEO title (keep under ~60 chars). */
+  metaTitle?: string;
+  /** Overrides meta description / OG description (keep ~150–160 chars). */
+  metaDescription?: string;
+  /** Visible page H1 (optional; defaults to `name`). */
+  h1Title?: string;
+  /** Short intro under H1 (optional; defaults to `description` + category line). */
+  introLead?: string;
 }
 
 export const TOOL_CATEGORIES: Record<ToolCategory, string> = {
@@ -27,14 +35,43 @@ export const TOOLS: ToolMeta[] = [
     name: "QR Code Generator",
     description: "Create QR codes for URLs, text, and Wi‑Fi. Customize colors and size, download PNG.",
     category: "generators",
-    keywords: ["qr code", "generate qr", "qr generator"],
+    metaTitle: "Free QR Code Generator Online (No Signup, Instant Download)",
+    metaDescription:
+      "Free QR code generator online—WhatsApp-friendly links, website URLs, no signup. Create a QR code for business or personal use; customize colors, instant PNG download.",
+    h1Title: "Free QR Code Generator Online",
+    introLead:
+      "Create a QR code for a website link, plain text, or Wi‑Fi in seconds. No account, instant preview, and PNG download—ideal for business cards, menus, and campaigns.",
+    keywords: [
+      "free qr code generator online",
+      "qr code generator for whatsapp",
+      "create qr code without signup",
+      "qr code generator for link free",
+      "instant qr code generator",
+      "qr code generator for business",
+      "generate qr code for website link",
+      "qr code",
+      "generate qr",
+    ],
   },
   {
     slug: "password-generator",
     name: "Password Generator",
     description: "Generate strong random passwords with customizable length and character sets.",
     category: "generators",
-    keywords: ["password", "random password", "strong password"],
+    metaTitle: "Strong Random Password Generator Online (Free, Secure)",
+    metaDescription:
+      "Strong password generator online—random, secure, with symbols. Free tool, no login. Create passwords that meet strict site rules in one click.",
+    h1Title: "Strong Password Generator Online",
+    introLead:
+      "Generate random passwords with letters, numbers, and symbols. Runs in your browser—nothing is stored or sent to our servers.",
+    keywords: [
+      "strong password generator online",
+      "random password generator free",
+      "secure password generator tool",
+      "generate password with symbols online",
+      "password generator",
+      "random password",
+    ],
   },
   {
     slug: "uuid-generator",
@@ -62,7 +99,22 @@ export const TOOLS: ToolMeta[] = [
     name: "JSON Formatter / Validator",
     description: "Format, validate, and beautify JSON. Detect syntax errors.",
     category: "developer",
-    keywords: ["json formatter", "json validator", "beautify json"],
+    metaTitle: "JSON Formatter Online Free — Beautify & Validate JSON",
+    metaDescription:
+      "JSON formatter online free: beautify, validate, and pretty-print JSON. JSON viewer in your browser—fix syntax errors fast, no signup.",
+    h1Title: "JSON Formatter & Beautifier Online",
+    introLead:
+      "Paste minified or broken JSON and get readable, indented output with clear validation errors. Perfect for APIs, configs, and debugging.",
+    keywords: [
+      "json formatter online free",
+      "json beautifier and validator",
+      "format json online tool",
+      "json viewer free",
+      "json pretty print online",
+      "json formatter",
+      "json validator",
+      "beautify json",
+    ],
   },
   {
     slug: "base64-encoder",
@@ -90,14 +142,44 @@ export const TOOLS: ToolMeta[] = [
     name: "Word Counter",
     description: "Count words, characters, sentences, and paragraphs. No data sent to server.",
     category: "text",
-    keywords: ["word count", "character count", "text statistics"],
+    metaTitle: "Free Word Counter Online (Character & Sentence Count Tool)",
+    metaDescription:
+      "Free word counter online with character and sentence count—no login. Copy-paste or type; perfect for students, essays, and social limits.",
+    h1Title: "Free Word Counter Online Tool",
+    introLead:
+      "Count words, characters (with and without spaces), sentences, and paragraphs instantly. Ideal for essay limits, meta descriptions, and captions—all in your browser.",
+    keywords: [
+      "free word counter online",
+      "word counter for students",
+      "word count tool without login",
+      "online word counter with character count",
+      "word counter for essay writing",
+      "fast word counter tool",
+      "word counter for paragraphs",
+      "word counter copy paste online",
+      "word count",
+      "character count",
+    ],
   },
   {
     slug: "image-compressor",
     name: "Image Compressor",
     description: "Compress images (JPEG/PNG/WebP) in the browser. Reduce file size before upload.",
     category: "image",
-    keywords: ["compress image", "reduce image size", "image optimizer"],
+    metaTitle: "Compress Images Online Free — Fast JPEG/PNG/WebP",
+    metaDescription:
+      "Compress image online free without losing too much quality. Fast image compressor in your browser—smaller files for web, email, and social.",
+    h1Title: "Free Image Compressor Online",
+    introLead:
+      "Shrink JPEG, PNG, or WebP files before you upload. Processing stays on your device—no signup, quick downloads.",
+    keywords: [
+      "compress image without losing quality",
+      "image compressor fast online",
+      "compress image",
+      "reduce image size",
+      "image optimizer",
+      "free image compression",
+    ],
   },
   {
     slug: "png-to-jpg",
@@ -118,7 +200,20 @@ export const TOOLS: ToolMeta[] = [
     name: "Image Resizer",
     description: "Resize images by pixels or percentage. Keep aspect ratio or set custom dimensions.",
     category: "image",
-    keywords: ["resize image", "image size", "scale image"],
+    metaTitle: "Image Resizer Online Free — Pixels, %, Instagram-Ready",
+    metaDescription:
+      "Image resizer online free: change width and height by pixels or percent. Resize images for Instagram, avatars, and web—local processing, no signup.",
+    h1Title: "Free Image Resizer Online",
+    introLead:
+      "Resize photos and graphics by exact pixels or percentage, with optional aspect ratio lock—ready for social posts, listings, and websites.",
+    keywords: [
+      "image resizer online free",
+      "resize image for instagram",
+      "resize image",
+      "image size",
+      "scale image",
+      "photo resizer",
+    ],
   },
   {
     slug: "image-crop",
@@ -209,25 +304,27 @@ export function getToolMetadata(slug: string): import("next").Metadata {
   }
   const base = getToolBaseUrl();
   const url = `${base.replace(/\/$/, "")}/tools/${tool.slug}`;
-  const title = `${tool.name} — ${SITE_NAME}`;
-  const description =
-    tool.description.length > 160 ? tool.description.slice(0, 157) + "…" : tool.description;
+  const title = tool.metaTitle ?? `${tool.name} — ${SITE_NAME}`;
+  const rawDesc = tool.metaDescription ?? tool.description;
+  const description = rawDesc.length > 160 ? rawDesc.slice(0, 157) + "…" : rawDesc;
   const keywords = tool.keywords ?? [tool.name.toLowerCase(), "free online tool"];
+  const ogTitle = tool.metaTitle ?? tool.name;
+  const ogDescription = tool.metaDescription ?? tool.description;
   return {
     title,
     description,
     keywords: keywords.join(", "),
     openGraph: {
-      title: tool.name,
-      description: tool.description,
+      title: ogTitle,
+      description: ogDescription,
       type: "website",
       url,
       siteName: SITE_NAME,
     },
     twitter: {
       card: "summary_large_image",
-      title: tool.name,
-      description: tool.description,
+      title: ogTitle,
+      description: ogDescription,
     },
     alternates: { canonical: url },
   };
