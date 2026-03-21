@@ -3,10 +3,22 @@ import { getRelatedTools, TOOL_CATEGORIES, type ToolMeta } from "@/lib/tools/con
 import { getToolGuide } from "@/lib/toolGuides";
 import { getArticleBySlug } from "@/lib/blogArticles";
 import { TOOL_TO_BLOG_SLUGS } from "@/lib/toolBlogLinks";
+import { getBaseUrl, SITE_NAME } from "@/lib/siteConfig";
 
 interface ToolLayoutProps {
   tool: ToolMeta;
   children: React.ReactNode;
+}
+
+function getApplicationCategory(category: string): string {
+  const map: Record<string, string> = {
+    generators: "UtilitiesApplication",
+    developer: "DeveloperApplication",
+    text: "UtilitiesApplication",
+    image: "MultimediaApplication",
+    pdf: "UtilitiesApplication",
+  };
+  return map[category] || "UtilitiesApplication";
 }
 
 export function ToolLayout({ tool, children }: ToolLayoutProps) {
@@ -15,6 +27,30 @@ export function ToolLayout({ tool, children }: ToolLayoutProps) {
   const guide = getToolGuide(tool.slug);
   const h1 = tool.h1Title ?? tool.name;
   const primaryIntro = tool.introLead ?? tool.description;
+  const baseUrl = getBaseUrl();
+  const toolUrl = `${baseUrl}/tools/${tool.slug}`;
+  const description = tool.metaDescription ?? tool.description;
+
+  const softwareAppJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    name: tool.name,
+    url: toolUrl,
+    applicationCategory: getApplicationCategory(tool.category),
+    operatingSystem: "Any (Web Browser)",
+    offers: {
+      "@type": "Offer",
+      price: "0",
+      priceCurrency: "USD",
+    },
+    description: description,
+    featureList: guide?.features || [],
+    provider: {
+      "@type": "Organization",
+      name: SITE_NAME,
+      url: baseUrl,
+    },
+  };
 
   const faqJsonLd =
     guide?.faqs && guide.faqs.length > 0
@@ -34,6 +70,10 @@ export function ToolLayout({ tool, children }: ToolLayoutProps) {
 
   return (
     <div className="tool-page">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareAppJsonLd) }}
+      />
       {faqJsonLd && (
         <script
           type="application/ld+json"

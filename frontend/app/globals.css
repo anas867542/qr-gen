@@ -236,6 +236,89 @@ body {
   padding-bottom: 3rem;
 }
 
+/* Homepage “authority” SEO block: content + tools positioning */
+.home-authority {
+  position: relative;
+  z-index: 1;
+  padding: 2.5rem 0;
+  border-top: 1px solid var(--border);
+  background: rgba(18, 18, 24, 0.35);
+}
+
+.home-authority-inner {
+  max-width: 56rem;
+}
+
+.home-authority-title {
+  margin: 0 0 0.75rem;
+  font-size: 1.45rem;
+  font-weight: 800;
+  text-align: center;
+  line-height: 1.25;
+}
+
+.home-authority-lead {
+  margin: 0 auto 1.75rem;
+  max-width: 44rem;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.98rem;
+  line-height: 1.65;
+}
+
+.home-authority-grid {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+  .home-authority-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.home-authority-card {
+  padding: 1.25rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--surface);
+  box-shadow: 0 12px 32px -12px rgba(0, 0, 0, 0.35);
+}
+
+.home-authority-card-title {
+  margin: 0 0 0.5rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.home-authority-card-text {
+  margin: 0 0 0.85rem;
+  font-size: 0.9rem;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.home-authority-link {
+  display: inline-block;
+  margin-right: 0.75rem;
+  margin-bottom: 0.35rem;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--accent, #a78bfa);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.home-authority-link:hover {
+  color: #c4b5fd;
+}
+
+.home-authority-link-secondary {
+  font-weight: 500;
+  opacity: 0.95;
+}
+
 .home-guides {
   padding: 2.5rem 0 3rem;
   border-top: 1px solid var(--border);

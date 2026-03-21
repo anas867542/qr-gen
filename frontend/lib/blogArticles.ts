@@ -1,10 +1,7 @@
-export interface BlogArticle {
-  slug: string;
-  title: string;
-  description: string;
-  date: string;
-  sections: { heading: string; paragraphs: string[] }[];
-}
+import type { BlogArticle } from "./blogTypes";
+import { AUTHORITY_BLOG_POSTS } from "./authorityBlogPosts";
+
+export type { BlogArticle };
 
 export const BLOG_ARTICLES: BlogArticle[] = [
   {
@@ -529,6 +526,7 @@ export const BLOG_ARTICLES: BlogArticle[] = [
         ],
       },
     ],
+    relatedTools: [{ slug: "word-counter", label: "Try our free word counter online →" }],
   },
   {
     slug: "how-to-count-words-in-an-essay",
@@ -562,7 +560,9 @@ export const BLOG_ARTICLES: BlogArticle[] = [
         ],
       },
     ],
+    relatedTools: [{ slug: "word-counter", label: "Open the free word counter →" }],
   },
+  ...AUTHORITY_BLOG_POSTS,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {

@@ -1,23 +1,44 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { BLOG_ARTICLES } from "@/lib/blogArticles";
-import { SITE_NAME } from "@/lib/siteConfig";
+import { SITE_NAME, getBaseUrl } from "@/lib/siteConfig";
+
+const baseUrl = getBaseUrl();
 
 export const metadata: Metadata = {
-  title: `Blog — QR Codes, Tips & Guides | ${SITE_NAME}`,
+  title: `Guides & Articles – QR Codes, PDFs, Images & More | ${SITE_NAME}`,
   description:
-    "Guides and articles about QR codes: what they are, how they work, uses for business, WhatsApp, security, and how to create free QR codes.",
+    "Step-by-step guides and articles about QR codes, PDF tools, image compression, password security, and more. Free tutorials for developers and everyday users.",
   keywords: ["qr code blog", "qr code guide", "qr code tips", "free qr code", "qr code articles"],
   openGraph: {
-    title: `Blog — QR Codes & Free Tool Guides | ${SITE_NAME}`,
-    description: "Learn about QR codes, best practices, and how to use our free online tools.",
+    title: `Guides & Articles – QR Codes, PDFs, Images & More | ${SITE_NAME}`,
+    description: "Step-by-step guides and articles about QR codes, PDF tools, image compression, password security, and more.",
     type: "website",
+    url: `${baseUrl}/blog`,
   },
+  alternates: { canonical: `${baseUrl}/blog` },
 };
 
 export default function BlogPage() {
+  const blogJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    name: `${SITE_NAME} Blog`,
+    url: `${baseUrl}/blog`,
+    description: "Step-by-step guides and articles about QR codes, PDF tools, image compression, password security, and more.",
+    publisher: {
+      "@type": "Organization",
+      name: SITE_NAME,
+      url: baseUrl,
+    },
+  };
+
   return (
     <div className="wrap" style={{ paddingTop: "2rem", paddingBottom: "4rem", maxWidth: "800px" }}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(blogJsonLd) }}
+      />
       <nav style={{ marginBottom: "1.5rem" }}>
         <Link href="/" className="nav-link" style={{ display: "inline-block" }}>
           ← Back to home

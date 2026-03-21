@@ -83,8 +83,24 @@ export default function RootLayout({
               name: SITE_NAME,
               url: siteUrl,
               description:
-                "Free online tools: QR codes, word counter, JSON formatter, password generator, PDF and image utilities. No signup.",
-              publisher: { "@type": "Organization", name: SITE_NAME, url: siteUrl },
+                "Free online tools for everyone — QR code generator, password generator, JSON formatter, PDF tools, image tools, and more. No signup, runs in your browser.",
+              potentialAction: {
+                "@type": "SearchAction",
+                target: {
+                  "@type": "EntryPoint",
+                  urlTemplate: `${siteUrl}/#tools?q={search_term_string}`,
+                },
+                "query-input": "required name=search_term_string",
+              },
+              publisher: {
+                "@type": "Organization",
+                name: SITE_NAME,
+                url: siteUrl,
+                logo: {
+                  "@type": "ImageObject",
+                  url: iconUrl,
+                },
+              },
             }),
           }}
         />

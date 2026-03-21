@@ -35,9 +35,9 @@ export const TOOLS: ToolMeta[] = [
     name: "QR Code Generator",
     description: "Create QR codes for URLs, text, and Wi‑Fi. Customize colors and size, download PNG.",
     category: "generators",
-    metaTitle: "Free QR Code Generator Online (No Signup, Instant Download)",
+    metaTitle: "Free QR Code Generator – Create QR Codes Online | Snapptools",
     metaDescription:
-      "Free QR code generator online—WhatsApp-friendly links, website URLs, no signup. Create a QR code for business or personal use; customize colors, instant PNG download.",
+      "Create free QR codes for URLs, Wi-Fi, and text. Customize colors and size, then download as PNG. No signup required — works instantly in your browser.",
     h1Title: "Free QR Code Generator Online",
     introLead:
       "Create a QR code for a website link, plain text, or Wi‑Fi in seconds. No account, instant preview, and PNG download—ideal for business cards, menus, and campaigns.",
@@ -58,9 +58,9 @@ export const TOOLS: ToolMeta[] = [
     name: "Password Generator",
     description: "Generate strong random passwords with customizable length and character sets.",
     category: "generators",
-    metaTitle: "Strong Random Password Generator Online (Free, Secure)",
+    metaTitle: "Free Password Generator – Strong Random Passwords | Snapptools",
     metaDescription:
-      "Strong password generator online—random, secure, with symbols. Free tool, no login. Create passwords that meet strict site rules in one click.",
+      "Generate strong, random passwords with custom length and character sets. Free, instant, and private — your passwords are never sent to our servers.",
     h1Title: "Strong Password Generator Online",
     introLead:
       "Generate random passwords with letters, numbers, and symbols. Runs in your browser—nothing is stored or sent to our servers.",
@@ -85,6 +85,9 @@ export const TOOLS: ToolMeta[] = [
     name: "Lorem Ipsum Generator",
     description: "Generate placeholder text in paragraphs, sentences, or words.",
     category: "generators",
+    metaTitle: "Lorem Ipsum Generator – Free Placeholder Text | Snapptools",
+    metaDescription:
+      "Generate Lorem Ipsum placeholder text by paragraphs, sentences, or words. Free and instant — perfect for designers and developers.",
     keywords: ["lorem ipsum", "placeholder text", "dummy text"],
   },
   {
@@ -92,6 +95,9 @@ export const TOOLS: ToolMeta[] = [
     name: "Random Number Generator",
     description: "Generate random numbers within a range. Single or multiple, with optional duplicates.",
     category: "generators",
+    metaTitle: "Random Number Generator – Free Online Tool | Snapptools",
+    metaDescription:
+      "Generate random numbers within any range. Single or multiple numbers, with or without duplicates. Free, instant, no signup needed.",
     keywords: ["random number", "random integer", "number generator"],
   },
   {
@@ -99,9 +105,9 @@ export const TOOLS: ToolMeta[] = [
     name: "JSON Formatter / Validator",
     description: "Format, validate, and beautify JSON. Detect syntax errors.",
     category: "developer",
-    metaTitle: "JSON Formatter Online Free — Beautify & Validate JSON",
+    metaTitle: "JSON Formatter & Validator – Beautify JSON Online | Snapptools",
     metaDescription:
-      "JSON formatter online free: beautify, validate, and pretty-print JSON. JSON viewer in your browser—fix syntax errors fast, no signup.",
+      "Format, validate, and beautify JSON instantly. Detects syntax errors and highlights them. Free online JSON formatter — no signup, no data uploaded.",
     h1Title: "JSON Formatter & Beautifier Online",
     introLead:
       "Paste minified or broken JSON and get readable, indented output with clear validation errors. Perfect for APIs, configs, and debugging.",
@@ -121,6 +127,9 @@ export const TOOLS: ToolMeta[] = [
     name: "Base64 Encoder / Decoder",
     description: "Encode text to Base64 and decode Base64 to text. Works entirely in your browser.",
     category: "developer",
+    metaTitle: "Base64 Encoder & Decoder – Free Online Tool | Snapptools",
+    metaDescription:
+      "Encode text to Base64 or decode Base64 back to text instantly. Free, private, and runs entirely in your browser. No signup required.",
     keywords: ["base64", "encode", "decode"],
   },
   {
@@ -128,6 +137,9 @@ export const TOOLS: ToolMeta[] = [
     name: "URL Encoder / Decoder",
     description: "Encode or decode URL-encoded (percent-encoded) strings.",
     category: "developer",
+    metaTitle: "URL Encoder & Decoder – Percent-Encode Strings Free | Snapptools",
+    metaDescription:
+      "Encode or decode URL percent-encoded strings online. Fast, free, and works in your browser. No signup or installation required.",
     keywords: ["url encode", "percent encode", "decode url"],
   },
   {
@@ -135,6 +147,9 @@ export const TOOLS: ToolMeta[] = [
     name: "Hash Generator",
     description: "Generate MD5, SHA-1, SHA-256, SHA-384, SHA-512 hashes from text.",
     category: "developer",
+    metaTitle: "Hash Generator – MD5, SHA-1, SHA-256, SHA-512 Online | Snapptools",
+    metaDescription:
+      "Generate MD5, SHA-1, SHA-256, SHA-384, and SHA-512 hashes from any text. Free online hash generator — instant results, no data sent to servers.",
     keywords: ["hash", "md5", "sha256", "checksum"],
   },
   {
@@ -142,9 +157,9 @@ export const TOOLS: ToolMeta[] = [
     name: "Word Counter",
     description: "Count words, characters, sentences, and paragraphs. No data sent to server.",
     category: "text",
-    metaTitle: "Free Word Counter Online (Character & Sentence Count Tool)",
+    metaTitle: "Free Word Counter – Count Words, Characters & More Online | Snapptools",
     metaDescription:
-      "Free word counter online with character and sentence count—no login. Copy-paste or type; perfect for students, essays, and social limits.",
+      "Count words, characters, sentences, and paragraphs in seconds. Free online word counter — paste your text and get instant results. No data sent to our servers.",
     h1Title: "Free Word Counter Online Tool",
     introLead:
       "Count words, characters (with and without spaces), sentences, and paragraphs instantly. Ideal for essay limits, meta descriptions, and captions—all in your browser.",
@@ -166,9 +181,9 @@ export const TOOLS: ToolMeta[] = [
     name: "Image Compressor",
     description: "Compress images (JPEG/PNG/WebP) in the browser. Reduce file size before upload.",
     category: "image",
-    metaTitle: "Compress Images Online Free — Fast JPEG/PNG/WebP",
+    metaTitle: "Free Image Compressor – Reduce Image File Size Online | Snapptools",
     metaDescription:
-      "Compress image online free without losing too much quality. Fast image compressor in your browser—smaller files for web, email, and social.",
+      "Compress JPEG, PNG, and WebP images directly in your browser. Reduce file size before uploading — free, fast, and private. No signup required.",
     h1Title: "Free Image Compressor Online",
     introLead:
       "Shrink JPEG, PNG, or WebP files before you upload. Processing stays on your device—no signup, quick downloads.",
@@ -186,6 +201,9 @@ export const TOOLS: ToolMeta[] = [
     name: "PNG to JPG Converter",
     description: "Convert PNG images to JPG/JPEG. Adjust quality and download.",
     category: "image",
+    metaTitle: "PNG to JPG Converter – Free Online Image Converter | Snapptools",
+    metaDescription:
+      "Convert PNG images to JPG/JPEG online for free. Adjust quality and download instantly. No upload to servers — runs entirely in your browser.",
     keywords: ["png to jpg", "convert png", "png jpeg"],
   },
   {
@@ -193,6 +211,9 @@ export const TOOLS: ToolMeta[] = [
     name: "JPG to WebP Converter",
     description: "Convert JPG/JPEG images to WebP format. Smaller file size, same quality.",
     category: "image",
+    metaTitle: "JPG to WebP Converter – Free Online | Snapptools",
+    metaDescription:
+      "Convert JPG images to WebP format for smaller file sizes without losing quality. Free, instant, and private — no signup required.",
     keywords: ["jpg to webp", "convert to webp", "jpeg webp"],
   },
   {
@@ -200,9 +221,9 @@ export const TOOLS: ToolMeta[] = [
     name: "Image Resizer",
     description: "Resize images by pixels or percentage. Keep aspect ratio or set custom dimensions.",
     category: "image",
-    metaTitle: "Image Resizer Online Free — Pixels, %, Instagram-Ready",
+    metaTitle: "Free Image Resizer – Resize Images Online by Pixels or % | Snapptools",
     metaDescription:
-      "Image resizer online free: change width and height by pixels or percent. Resize images for Instagram, avatars, and web—local processing, no signup.",
+      "Resize images by pixels or percentage online for free. Keep aspect ratio or set custom dimensions. Fast, private, and no signup required.",
     h1Title: "Free Image Resizer Online",
     introLead:
       "Resize photos and graphics by exact pixels or percentage, with optional aspect ratio lock—ready for social posts, listings, and websites.",
@@ -220,6 +241,9 @@ export const TOOLS: ToolMeta[] = [
     name: "Image Crop Tool",
     description: "Crop images to a selected area. Download the cropped result.",
     category: "image",
+    metaTitle: "Free Online Image Crop Tool – Crop Images Instantly | Snapptools",
+    metaDescription:
+      "Crop images to any area online. Select your crop area and download the result instantly — free, private, no signup, runs in your browser.",
     keywords: ["crop image", "image crop", "cut image"],
   },
   {
@@ -227,6 +251,9 @@ export const TOOLS: ToolMeta[] = [
     name: "Image to Base64 Converter",
     description: "Convert images to Base64 data URL. Copy or use in HTML/CSS.",
     category: "image",
+    metaTitle: "Image to Base64 Converter – Free Online Tool | Snapptools",
+    metaDescription:
+      "Convert images to Base64 data URLs for use in HTML and CSS. Free, instant, and private — your image never leaves your browser.",
     keywords: ["image base64", "base64 image", "data url image"],
   },
   {
@@ -234,6 +261,9 @@ export const TOOLS: ToolMeta[] = [
     name: "PDF to Word",
     description: "Extract text from PDF and download as a Word (.docx) document.",
     category: "pdf",
+    metaTitle: "PDF to Word Converter – Free Online, No Signup | Snapptools",
+    metaDescription:
+      "Convert PDF files to Word (.docx) documents online for free. Extract text and download instantly. No signup, no file uploads to servers.",
     keywords: ["pdf to word", "convert pdf to docx", "pdf word"],
   },
   {
@@ -241,6 +271,9 @@ export const TOOLS: ToolMeta[] = [
     name: "Word to PDF",
     description: "Convert Word (.docx) documents to PDF. Upload and download in your browser.",
     category: "pdf",
+    metaTitle: "Word to PDF Converter – Free Online | Snapptools",
+    metaDescription:
+      "Convert Word (.docx) documents to PDF online for free. Upload your file and download the converted PDF instantly. No signup required.",
     keywords: ["word to pdf", "docx to pdf", "convert word pdf"],
   },
   {
@@ -248,6 +281,9 @@ export const TOOLS: ToolMeta[] = [
     name: "Merge PDF",
     description: "Combine multiple PDF files into one. Reorder pages and download.",
     category: "pdf",
+    metaTitle: "Merge PDF Files Free Online – Combine PDFs Instantly | Snapptools",
+    metaDescription:
+      "Combine multiple PDF files into one online for free. Reorder pages and download your merged PDF instantly. No signup, no file size limits.",
     keywords: ["merge pdf", "combine pdf", "join pdf"],
   },
   {
@@ -255,6 +291,9 @@ export const TOOLS: ToolMeta[] = [
     name: "Split PDF",
     description: "Split a PDF into multiple files by page range or one file per page.",
     category: "pdf",
+    metaTitle: "Split PDF Free Online – Separate PDF Pages | Snapptools",
+    metaDescription:
+      "Split a PDF into multiple files by page range or one page per file. Free, instant, and private — no signup, no data sent to servers.",
     keywords: ["split pdf", "extract pages", "pdf splitter"],
   },
   {
@@ -262,6 +301,9 @@ export const TOOLS: ToolMeta[] = [
     name: "Compress PDF",
     description: "Reduce PDF file size by lowering image resolution. Works in your browser.",
     category: "pdf",
+    metaTitle: "Compress PDF Free Online – Reduce PDF File Size | Snapptools",
+    metaDescription:
+      "Reduce PDF file size by lowering image resolution. Free online PDF compressor — works in your browser, no signup or upload to servers needed.",
     keywords: ["compress pdf", "reduce pdf size", "pdf compressor"],
   },
   {
@@ -269,6 +311,9 @@ export const TOOLS: ToolMeta[] = [
     name: "Add Watermark to PDF",
     description: "Add text or image watermark to every page of your PDF.",
     category: "pdf",
+    metaTitle: "Add Watermark to PDF Free Online | Snapptools",
+    metaDescription:
+      "Add a text or image watermark to every page of your PDF for free. No signup required — works instantly in your browser.",
     keywords: ["pdf watermark", "add watermark", "watermark pdf"],
   },
 ];

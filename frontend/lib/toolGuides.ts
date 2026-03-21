@@ -341,32 +341,29 @@ export const TOOL_GUIDES: ToolGuide[] = [
     slug: "word-counter",
     sections: [
       {
-        heading: "What is a word counter?",
+        heading: "What is a Word Counter?",
         paragraphs: [
-          "A word counter is an online tool that measures how many words, characters, sentences, and paragraphs are in a piece of text. Students use a word counter for essay writing to stay within class limits; marketers use online word counter with character count fields for titles and meta descriptions; authors track chapters and scenes. Our free word counter online updates as you type or paste, so you always see current totals without uploading your document.",
-          "Unlike desktop apps that require installation, a word count tool without login removes friction: open the page, paste your draft, and adjust until you hit the target. You also get character counts with and without spaces—useful when a form counts spaces differently or when you are writing tweets, SMS, or ad copy.",
+          "A word counter is a simple utility that tells you how many words appear in your text. Most online versions also show characters (with and without spaces), sentences, and sometimes paragraphs. That matters because school essays, scholarship forms, blog platforms, and ad networks all enforce limits—and guessing leads to rejected submissions or cut-off titles.",
+          "Our free word counter online is built for a “problem first” workflow: you paste or type, see live numbers, and edit until you are in range. Nothing uploads to our servers for counting, which makes it a strong word count tool without login when you are on a shared computer or handling private drafts.",
+          "People also search for an online word counter with character count when they write SEO meta titles, tweet threads, or SMS-style alerts. One screen with words + characters saves toggling between menus in a word processor. If you need a fast word counter tool that respects your time, browser-based counters beat opening heavy apps for a thirty-second check.",
         ],
       },
       {
-        heading: "How to use this word counter",
+        heading: "How to Use This Tool?",
         paragraphs: [
-          "Step 1: Paste your essay, article, or notes into the text area—or type directly if you prefer.",
-          "Step 2: Read the live word count and character count at a glance.",
-          "Step 3: Check sentence and paragraph totals if your brief asks for structure (e.g. “five paragraphs”).",
-          "Step 4: Trim or expand your draft until you meet the assignment or platform limit.",
-          "Step 5: Copy your final text back to Word, Google Docs, or your CMS—our tool does not store your work.",
+          "Step 1: Copy your text from any app (Google Docs, Word, Notion, email) or start typing directly in the box.",
+          "Step 2: Watch the live word count and character count update—no button to press for each refresh.",
+          "Step 3: Check sentences and paragraphs if your rubric mentions structure, not just length.",
+          "Step 4: Tighten vague sentences or add evidence until you meet the minimum or maximum.",
+          "Step 5: Copy the finished text back to your document and submit—our page does not keep a copy of your essay.",
         ],
       },
       {
-        heading: "Benefits",
+        heading: "Why Use a Word Counter?",
         paragraphs: [
-          "Fast word counter tool feedback helps you avoid submitting an essay that is fifty words over the limit or an abstract that is too short. Because it is a word counter copy paste online workflow, you can pull text from email, PDFs, or notes instantly. Teachers, bloggers, translators, and students all save time compared to manual counting.",
-        ],
-      },
-      {
-        heading: "Who uses this tool?",
-        paragraphs: [
-          "Students and teachers for papers and abstracts; content creators for captions and scripts; job seekers for cover letters with strict length; SEO writers for meta titles and descriptions; social media managers for platform limits. If you need a word counter for students or professionals alike, the same simple interface applies.",
+          "For students: a word counter for essay writing helps you stay inside limits without printing or exporting. You can paste one section at a time to see where a long paragraph blows your budget, then fix that section only.",
+          "For SEO and marketing: Google snippets and social networks care about character width, not just ideas. Pasting headline and description variants into a word counter copy paste online flow lets you compare length side by side before publishing.",
+          "For anyone else—journalists, translators, job seekers—the same tool answers “how long is this?” in seconds, which is why a dedicated counter beats counting manually or relying on hidden status bars.",
         ],
       },
     ],
@@ -383,9 +380,9 @@ export const TOOL_GUIDES: ToolGuide[] = [
         answer: "Yes. Use it as much as you want without payment or signup.",
       },
       {
-        question: "Does it save my essay or document?",
+        question: "Is my data saved on your servers?",
         answer:
-          "No. Counting happens in your browser; we do not store your pasted text on our servers.",
+          "No. Counting runs in your browser—we do not store your essay, story, or pasted text on our servers.",
       },
       {
         question: "How accurate is the word count?",
