@@ -8,8 +8,24 @@ import { HomepageWhySnapptoolsSection } from "@/components/home/HomepageWhySnapp
 import { HomepageGuidesSection } from "@/components/home/HomepageGuidesSection";
 import { FaqSection } from "@/components/home/FaqSection";
 import { SITE_NAME, getBaseUrl } from "@/lib/siteConfig";
+import { TOOLS } from "@/lib/tools/config";
 
 const homeUrl = getBaseUrl();
+
+const homepageItemListJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  name: `${SITE_NAME} — free online tools`,
+  description:
+    "Browser-based tools for QR codes, PDFs, images, text, security, and developers. No signup required.",
+  numberOfItems: TOOLS.length,
+  itemListElement: TOOLS.map((t, i) => ({
+    "@type": "ListItem",
+    position: i + 1,
+    name: t.name,
+    url: `${homeUrl}/tools/${t.slug}`,
+  })),
+};
 
 export const metadata: Metadata = {
   title: `${SITE_NAME} – Free Online Tools: QR Code, PDF, Image & Developer Utilities`,
@@ -38,6 +54,10 @@ export const metadata: Metadata = {
 export default function HomePage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(homepageItemListJsonLd) }}
+      />
       <Hero />
       <TrustStrip />
       <HomepageToolsIncludedSection />

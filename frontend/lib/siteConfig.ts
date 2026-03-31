@@ -3,7 +3,7 @@
  * Set NEXT_PUBLIC_SITE_URL and NEXT_PUBLIC_CONTACT_EMAIL in production.
  */
 export const SITE_NAME = "Snapptools";
-export const SITE_TAGLINE = "Free QR Code Generator & Online Tools";
+export const SITE_TAGLINE = "Free Online Tools — Done in a Snapp";
 export const DEFAULT_BASE_URL = "https://snapptools.net";
 export const DEFAULT_CONTACT_EMAIL = "snapptools138@gmail.com";
 

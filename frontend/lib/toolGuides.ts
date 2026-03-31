@@ -804,6 +804,59 @@ export const TOOL_GUIDES: ToolGuide[] = [
     ],
   },
   {
+    slug: "resume-templates",
+    sections: [
+      {
+        heading: "What does this resume and CV builder include?",
+        paragraphs: [
+          "You get fifteen distinct visual templates (including photo-forward headers, sidebars, tech and academic styles, and a Europass-inspired blue layout), optional profile photo upload, dedicated fields for languages and certifications, and a live preview aligned with your HTML download.",
+          "The format strip at the top switches section titles for different markets: International, Europass-style, US résumé, UK CV, DE/AT/CH, and ATS simple. Choosing Europass-style selects the EU-blue template automatically; you can still pick any other look.",
+          "Exports are standard .docx and .html files generated in your browser—we do not upload your text or images.",
+        ],
+      },
+      {
+        heading: "Downloading and editing",
+        paragraphs: [
+          "Download .docx for Word, Google Docs, or LibreOffice. Download .html for a portable file you can edit or print to PDF from the browser.",
+          "The preview scrolls inside its panel so long CVs stay comfortable to read beside the form.",
+        ],
+      },
+      {
+        heading: "Photos, ATS, and proofreading",
+        paragraphs: [
+          "Photos are common on EU CVs and optional on US résumés—follow employer norms in your region.",
+          "ATS simple plus a clean template helps parsers; always verify the final PDF or Word file in your target system if possible.",
+        ],
+      },
+    ],
+    features: [
+      "15 templates: Mercury, Teal, Executive, Swiss, Sidebar, Coral, Tech, Academic, EU blue, Metro, Aurora, Timeline, Magazine, Photo hero, Engineer",
+      "Format presets with matching headings",
+      "Photo, website, languages, certifications, job-applied-for (Europass-style)",
+      "Editable .docx and .html",
+      "Runs locally in your browser",
+    ],
+    faqs: [
+      {
+        question: "Is the Europass-style option an official Europass file?",
+        answer:
+          "No. It mirrors familiar section labels and styling. Official Europass outputs come from the European Commission tools. Here you get normal Word/HTML you can edit anywhere.",
+      },
+      {
+        question: "Can I add a photo?",
+        answer: "Yes. JPG, PNG, or WebP; shown in preview, HTML, and Word when supported.",
+      },
+      {
+        question: "Is it free?",
+        answer: "Yes. No payment or account is required.",
+      },
+      {
+        question: "Do you store my CV?",
+        answer: "No. Generation happens on your device.",
+      },
+    ],
+  },
+  {
     slug: "image-to-base64",
     sections: [
       {

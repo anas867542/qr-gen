@@ -7,7 +7,7 @@ export function Hero() {
       <div className="wrap hero-inner">
         <p className="hero-badge">Free · No signup · All in your browser</p>
         <h1 className="hero-title">
-          Free online <span className="gradient-text">tools</span>
+          Free online tools — <span className="gradient-text">done in a snapp</span>
         </h1>
         {/* Single intro (snapptools-content — replaces 3 repetitive blocks) */}
         <p className="hero-welcome hero-intro-single">
@@ -40,11 +40,15 @@ export function Hero() {
           <Link href="/tools/image-compressor" className="hero-inline-link">
             Image compressor
           </Link>
+          {" · "}
+          <Link href="/tools/resume-templates" className="hero-inline-link">
+            Resume builder
+          </Link>
         </p>
         <div className="hero-cta">
-          <a href="#tools" className="btn btn-primary">
+          <Link href="/tools" className="btn btn-primary">
             Browse all tools
-          </a>
+          </Link>
           <a href="/blog" className="btn btn-ghost">
             Guides &amp; blog
           </a>

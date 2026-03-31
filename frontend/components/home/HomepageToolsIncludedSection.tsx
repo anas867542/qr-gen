@@ -10,23 +10,31 @@ export function HomepageToolsIncludedSection() {
         <h2 id="about-tools-title" className="home-tools-included-title">
           What tools are included?
         </h2>
-        <p className="home-tools-included-lead">Snapptools covers five categories of everyday tasks:</p>
+        <p className="home-tools-included-lead">
+          Snapptools groups utilities the same way as leading tool hubs: generators, developer &amp; security helpers, text,
+          images, format converters, and PDFs.
+        </p>
         <ul className="home-tools-included-list">
           <li>
-            <strong>Generator tools</strong> — QR codes, passwords, UUIDs, Lorem Ipsum, and random numbers
+            <strong>Generators</strong> — QR codes, passwords, UUIDs, Lorem Ipsum, and random numbers
           </li>
           <li>
-            <strong>Developer tools</strong> — JSON formatter, Base64 encoder/decoder, URL encoder, and hash generator
-            (MD5, SHA-256, etc.)
+            <strong>Developer</strong> — JSON formatter/validator, Base64 encode/decode
           </li>
           <li>
-            <strong>Text tools</strong> — Word and character counter with sentence and paragraph tracking
+            <strong>Security &amp; encoding</strong> — URL encode/decode, MD5/SHA hashes
           </li>
           <li>
-            <strong>Image tools</strong> — Compress, resize, crop, convert (PNG↔JPG, JPG→WebP), and encode to Base64
+            <strong>Text</strong> — Word and character counter with sentences and paragraphs
           </li>
           <li>
-            <strong>PDF tools</strong> — Merge, split, compress, add watermarks, and convert between PDF and Word
+            <strong>Image</strong> — Compress, resize, crop, image→Base64
+          </li>
+          <li>
+            <strong>Converters</strong> — PNG→JPG, JPG→WebP
+          </li>
+          <li>
+            <strong>PDF &amp; documents</strong> — Merge, split, compress, watermark, PDF↔Word
           </li>
         </ul>
         <p className="home-tools-included-outro">

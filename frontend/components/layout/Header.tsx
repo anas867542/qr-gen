@@ -6,18 +6,14 @@ export function Header() {
     <header className="site-header">
       <div className="wrap header-inner">
         <Link href="/" className="brand">
-          <span className="brand-mark" aria-hidden="true">
-            ◇
-          </span>
-          <span className="brand-text">
-            {SITE_NAME}
-          </span>
+          <img className="brand-logo" src="/icon.svg" width={32} height={32} alt="" aria-hidden />
+          <span className="brand-text">{SITE_NAME}</span>
         </Link>
         <nav className="nav" aria-label="Primary">
           <Link href="/" className="nav-link">
             Home
           </Link>
-          <Link href="/#tools" className="nav-link">
+          <Link href="/tools" className="nav-link">
             All tools
           </Link>
           <Link href="/blog" className="nav-link">

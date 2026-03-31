@@ -38,4 +38,5 @@ export const TOOL_TO_BLOG_SLUGS: Record<string, string[]> = {
     "seo-character-count-meta-descriptions",
     "top-free-online-tools-for-students-2026",
   ],
+  "resume-templates": ["how-to-count-words-in-an-essay", "seo-character-count-meta-descriptions"],
 };
